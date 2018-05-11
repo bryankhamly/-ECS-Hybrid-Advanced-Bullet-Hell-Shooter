@@ -8,4 +8,7 @@ public class PlayerWeapons : MonoBehaviour
 	public GameObject Bullet;
 	public float attackSpeed;
 	public float timer;
+
+	public int weaponIndex;
+	public Weapon currentWeapon;
 }
