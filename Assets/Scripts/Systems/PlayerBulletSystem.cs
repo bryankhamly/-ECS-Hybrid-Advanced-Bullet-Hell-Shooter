@@ -21,15 +21,7 @@ public class PlayerBulletSystem : ComponentSystem
         {
             var bullet = data.PlayerBullet[i];
             var transformXD = data.GameObject[i].transform;
-
-            bullet.angle = Mathf.Atan2 (bullet.shootDir.y, bullet.shootDir.x);
-
-            if (bullet.angle < 0f)
-            {
-                bullet.CalculateComplementary (ref bullet.angle);
-            }
-
-            bullet.degree = bullet.Radian2Degrees (bullet.angle);
+            bullet.degree = bullet.Radian2Degrees (bullet.bulletStat.angle);
             transformXD.position = new Vector2 (transformXD.position.x + bullet.CalculateCosinePos (), transformXD.position.y + bullet.CalculateSinePos ());
         }
     }

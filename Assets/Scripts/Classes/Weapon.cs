@@ -15,11 +15,13 @@ public class Weapon
 
 	[Header("Bullet Stats")]
 	public float bulletsToShoot;
-	public float bulletSpeed;
 	public float bulletDamage;
-	public float bulletSpread;
+	public float bulletSpeed;
+
+	[Header("Bullet Offsets")]
+	public float angleSpread;
+	public float xOffset; //Per bullet
 
 	[Header("Effects")]
 	public AudioClip shootSfx;
-
 }

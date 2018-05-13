@@ -349,6 +349,11 @@ Transform:
   m_Father: {fileID: 1766979036}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!4 &510726035 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4820823008674304, guid: 8a541418ca7082c428c42eaaac3a2479,
+    type: 2}
+  m_PrefabInternal: {fileID: 616282883}
 --- !u!1001 &616282883
 Prefab:
   m_ObjectHideFlags: 0
@@ -387,6 +392,41 @@ Prefab:
     - target: {fileID: 4068623950474230, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.name
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.shootPoint
+      value: 
+      objectReference: {fileID: 510726035}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.bulletsToShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.bulletDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.bulletSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: defaultWeapon.angleSpread
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}

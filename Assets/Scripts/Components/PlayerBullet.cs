@@ -1,33 +1,38 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+[System.Serializable]
+public struct BulletStats
 {
     public float speed;
-    public Vector2 shootDir;
-    [HideInInspector]
     public float angle;
-    [HideInInspector]
+    public float damage;
+
+    public BulletStats (float speed, float angle, float damage)
+    {
+        this.speed = speed;
+        this.angle = angle;
+        this.damage = damage;
+    }
+}
+
+public class PlayerBullet : MonoBehaviour
+{
+    public BulletStats bulletStat;
     public float degree;
 
     public float CalculateCosinePos ()
     {
         float x;
-        x = Mathf.Cos (angle) * speed * Time.deltaTime;
+        x = Mathf.Cos (bulletStat.angle) * bulletStat.speed * Time.deltaTime;
         return x;
     }
 
     public float CalculateSinePos ()
     {
         float y;
-        y = Mathf.Sin (angle) * speed * Time.deltaTime;
+        y = Mathf.Sin (bulletStat.angle) * bulletStat.speed * Time.deltaTime;
         return y;
-    }
-
-    public float CalculateComplementary (ref float angle)
-    {
-        angle = angle + Mathf.PI * 2;
-        return angle;
     }
 
     public float Radian2Degrees (float radian)
@@ -59,5 +64,4 @@ public class PlayerBullet : MonoBehaviour
             Destroy (gameObject, 1);
         }
     }
-
 }

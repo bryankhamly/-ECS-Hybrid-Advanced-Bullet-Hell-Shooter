@@ -6,9 +6,14 @@ public class PlayerWeapons : MonoBehaviour
 {
 	public Transform ShootPoint;
 	public GameObject Bullet;
-	public float attackSpeed;
 	public float timer;
 
 	public int weaponIndex;
 	public Weapon currentWeapon;
+	public Weapon defaultWeapon;
+
+	void Awake ()
+	{
+		currentWeapon = defaultWeapon;
+	}
 }
