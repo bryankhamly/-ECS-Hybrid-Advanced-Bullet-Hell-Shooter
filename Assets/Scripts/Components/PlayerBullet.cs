@@ -19,6 +19,8 @@ public struct BulletStats
 public class PlayerBullet : MonoBehaviour
 {
     public BulletStats bulletStat;
+
+    [HideInInspector]
     public float degree;
 
     public float CalculateCosinePos ()

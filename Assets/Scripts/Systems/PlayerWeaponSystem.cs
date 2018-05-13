@@ -1,8 +1,8 @@
-﻿using Unity.Entities;
+﻿using System;
+using System.Collections;
+using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
-using System;
-using System.Collections;
 
 public class PlayerWeaponSystem : ComponentSystem
 {
@@ -37,10 +37,14 @@ public class PlayerWeaponSystem : ComponentSystem
         Vector2 shootDir = Vector2.up;
         var playerWeapons = data.PlayerWeapons[index];
         var currentWeapon = playerWeapons.currentWeapon;
+        Transform shootPoint = currentWeapon.shootPoint;
 
         float angleRadian;
+
         float2 bulletSpread;
-        bulletSpread = new float2(0,0);
+        bulletSpread = new float2 (0, 0);
+        float2 bulletXOffset;
+        bulletXOffset = new float2 (0, 0);
 
         angleRadian = Mathf.Atan2 (shootDir.y, shootDir.x);
 
@@ -51,8 +55,10 @@ public class PlayerWeaponSystem : ComponentSystem
 
         if (currentWeapon.bulletsToShoot > 1)
         {
-            var spread = CalculateSpread(currentWeapon.bulletsToShoot, currentWeapon.angleSpread);
-            bulletSpread = new float2(spread.Item1, spread.Item2);     
+            var spread = CalculateSpread (currentWeapon.bulletsToShoot, currentWeapon.angleSpread);
+            var offset = CalculateOffset (currentWeapon.bulletsToShoot, currentWeapon.xOffset);
+            bulletSpread = new float2 (spread.Item1, spread.Item2);
+            bulletXOffset = new float2 (offset.Item1, offset.Item2);
         }
 
         for (int i = 0; i < currentWeapon.bulletsToShoot; i++)
@@ -63,21 +69,38 @@ public class PlayerWeaponSystem : ComponentSystem
 
             var bullet = GameObject.Instantiate (playerWeapons.Bullet, data.GameObject[index].transform.position, Quaternion.identity);
             var playerBullet = bullet.GetComponent<PlayerBullet> ();
-            playerBullet.bulletStat = new BulletStats(bulletSpeed, bulletAngle, bulletDamage);
+
+            var cosPosition = Mathf.Cos (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
+            var sinPosition = Mathf.Sin (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
+
+            playerBullet.bulletStat = new BulletStats (bulletSpeed, bulletAngle, bulletDamage);
+
+            var startPos = shootPoint.position + (shootPoint.transform.forward * (bulletXOffset.x - i * bulletXOffset.y));
+            var bulletPos = new Vector2 (startPos.x + cosPosition, startPos.y + sinPosition);
+
+            bullet.transform.position = bulletPos;
+
             playerWeapons.timer = 0;
         }
     }
 
     public float CalculateComplementary (ref float angle)
     {
-        angle = angle + Mathf.PI * 2;
+        angle += Mathf.PI * 2; //pi = 180 degrees
         return angle;
     }
 
-    public Tuple <float,float> CalculateSpread(float bulletsShot, float spreadValue)
+    public Tuple<float, float> CalculateSpread (float bulletCount, float value)
     {
-        float baseValue = -spreadValue / 2;
-        float iteration = spreadValue / (bulletsShot - 1);
-        return Tuple.Create(baseValue, iteration);
+        float baseValue = -value / 2;
+        float iteration = value / (bulletCount - 1);
+        return Tuple.Create (baseValue, iteration);
+    }
+
+    public Tuple<float, float> CalculateOffset (float bulletCount, float value)
+    {
+        float baseValue = value / 2;
+        float iteration = value / (bulletCount - 1);
+        return Tuple.Create (baseValue, iteration);
     }
 }

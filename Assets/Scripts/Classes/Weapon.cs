@@ -7,7 +7,7 @@ public class Weapon
 {
 	[Header("Weapon Info")]
 	public string name; 
-	public bool requireInput;
+	public bool requireInput; //else autoshoot!
 	public Transform shootPoint;
 
 	[Header("Weapon Stats")]
@@ -19,9 +19,9 @@ public class Weapon
 	public float bulletSpeed;
 
 	[Header("Bullet Offsets")]
-	public float angleSpread;
-	public float xOffset; //Per bullet
-
+	public float angleSpread;//  \ | / etc
+	public float xOffset;// |_|_| or |__|__|
+	
 	[Header("Effects")]
 	public AudioClip shootSfx;
 }
