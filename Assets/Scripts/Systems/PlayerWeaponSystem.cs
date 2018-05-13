@@ -68,7 +68,7 @@ public class PlayerWeaponSystem : ComponentSystem
             float bulletDamage = currentWeapon.bulletDamage;
 
             var bullet = GameObject.Instantiate (playerWeapons.Bullet, data.GameObject[index].transform.position, Quaternion.identity);
-            var playerBullet = bullet.GetComponent<PlayerBullet> ();
+            PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet> ();
 
             var cosPosition = Mathf.Cos (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
             var sinPosition = Mathf.Sin (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
@@ -86,7 +86,7 @@ public class PlayerWeaponSystem : ComponentSystem
 
     public float CalculateComplementary (ref float angle)
     {
-        angle += Mathf.PI * 2; //pi = 180 degrees
+        angle += Mathf.PI * 2; //pi = 180 degrees half a circle
         return angle;
     }
 
