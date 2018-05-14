@@ -23,21 +23,41 @@ public class PlayerWeaponSystem : ComponentSystem
         {
             var playerWeapons = data.PlayerWeapons[i];
             var dt = Time.deltaTime;
-            playerWeapons.timer += dt;
 
-            if (playerWeapons.timer >= playerWeapons.currentWeapon.fireRate)
+            for (int j = 0; j < playerWeapons.weaponList.Count; j++)
             {
-                Shoot (i);
-            }
+                Weapon weapon = playerWeapons.weaponList[j];
+                if (weapon.active)
+                {
+                    weapon.timer += dt;
+                    if (weapon.timer >= weapon.fireRate)
+                    {
+                        Shoot (i, j);
+                    }
+                }
+            }      
         }
     }
 
-    void Shoot (int index)
-    {
-        Vector2 shootDir = Vector2.up;
+    void Shoot (int index, int weaponIndex)
+    {    
         var playerWeapons = data.PlayerWeapons[index];
-        var currentWeapon = playerWeapons.currentWeapon;
-        Transform shootPoint = currentWeapon.shootPoint;
+        var currentWeapon = playerWeapons.weaponList[weaponIndex];
+        Transform shootPoint = playerWeapons.ShootPoint;
+
+        Vector2 shootDir;
+
+        if (currentWeapon.autoAim)
+        {
+            Vector3 diff = playerWeapons.Target.position - data.GameObject[index].transform.position;
+            float zRot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            shootPoint.rotation = Quaternion.Euler(0,0,zRot);
+            shootDir = shootPoint.right;
+        }
+        else
+        {
+            shootDir = Vector2.up;
+        }
 
         float angleRadian;
 
@@ -67,7 +87,6 @@ public class PlayerWeaponSystem : ComponentSystem
             float bulletSpeed = currentWeapon.bulletSpeed;
             float bulletDamage = currentWeapon.bulletDamage;
 
-            //var bullet = GameObject.Instantiate (playerWeapons.Bullet, data.GameObject[index].transform.position, Quaternion.identity);
             var bullet = playerWeapons.Bullet.GetPooledInstance<PlayerBullet>();
             PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet> ();
 
@@ -81,7 +100,7 @@ public class PlayerWeaponSystem : ComponentSystem
 
             bullet.transform.position = bulletPos;
 
-            playerWeapons.timer = 0;
+            currentWeapon.timer = 0;
         }
     }
 

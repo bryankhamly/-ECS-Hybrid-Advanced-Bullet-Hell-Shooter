@@ -5,15 +5,14 @@ using UnityEngine;
 public class PlayerWeapons : MonoBehaviour
 {
 	public Transform ShootPoint;
+	public Transform Target;
 	public PlayerBullet Bullet;
-	public float timer;
 
-	public int weaponIndex;
-	public Weapon currentWeapon;
 	public Weapon defaultWeapon;
+	public List<Weapon> weaponList;
 
 	void Awake ()
 	{
-		currentWeapon = defaultWeapon;
+		weaponList.Add(defaultWeapon);
 	}
 }
