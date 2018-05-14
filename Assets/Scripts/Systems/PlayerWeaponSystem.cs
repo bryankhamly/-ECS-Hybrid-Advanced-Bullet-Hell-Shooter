@@ -50,7 +50,7 @@ public class PlayerWeaponSystem : ComponentSystem
 
         if (angleRadian < 0f)
         {
-            CalculateComplementary (ref angleRadian);
+            TrigStuff.CalculateComplementary (ref angleRadian);
         }
 
         if (currentWeapon.bulletsToShoot > 1)
@@ -82,12 +82,6 @@ public class PlayerWeaponSystem : ComponentSystem
 
             playerWeapons.timer = 0;
         }
-    }
-
-    public float CalculateComplementary (ref float angle)
-    {
-        angle += Mathf.PI * 2; //pi = 180 degrees half a circle
-        return angle;
     }
 
     public Tuple<float, float> CalculateSpread (float bulletCount, float value)

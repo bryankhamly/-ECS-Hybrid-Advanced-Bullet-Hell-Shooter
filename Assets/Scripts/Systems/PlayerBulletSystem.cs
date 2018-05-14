@@ -20,9 +20,10 @@ public class PlayerBulletSystem : ComponentSystem
         for (var i = 0; i < data.Length; i++)
         {
             var bullet = data.PlayerBullet[i];
+            var stat = bullet.bulletStat;
             var transformXD = data.GameObject[i].transform;
-            bullet.degree = bullet.Radian2Degrees (bullet.bulletStat.angle);
-            transformXD.position = new Vector2 (transformXD.position.x + bullet.CalculateCosinePos (), transformXD.position.y + bullet.CalculateSinePos ());
+            bullet.degree = TrigStuff.Radian2Degrees (bullet.bulletStat.angle);
+            transformXD.position = new Vector2 (transformXD.position.x + TrigStuff.CalculateCosinePos(stat.angle, stat.speed), transformXD.position.y + TrigStuff.CalculateSinePos(stat.angle, stat.speed));
         }
     }
 }
