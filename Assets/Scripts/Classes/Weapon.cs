@@ -14,7 +14,7 @@ public class Weapon
 	public float fireRate;
 
 	[Header("Bullet Stats")]
-	public float bulletsToShoot;
+	public int bulletsToShoot;
 	public float bulletDamage;
 	public float bulletSpeed;
 

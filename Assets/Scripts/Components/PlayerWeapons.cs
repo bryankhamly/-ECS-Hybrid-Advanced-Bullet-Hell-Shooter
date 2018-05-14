@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerWeapons : MonoBehaviour
 {
 	public Transform ShootPoint;
-	public GameObject Bullet;
+	public PlayerBullet Bullet;
 	public float timer;
 
 	public int weaponIndex;

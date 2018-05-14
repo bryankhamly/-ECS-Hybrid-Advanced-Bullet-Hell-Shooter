@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class PlayerBullet : PooledObject
 {
     public BulletStats bulletStat;
 
@@ -27,7 +27,7 @@ public class PlayerBullet : MonoBehaviour
     {
         if (!IsVisibleFromCamera ())
         {
-            Destroy (gameObject, 1);
+            ReturnToPool();
         }
     }
 }

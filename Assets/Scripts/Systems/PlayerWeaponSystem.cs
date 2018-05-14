@@ -67,7 +67,8 @@ public class PlayerWeaponSystem : ComponentSystem
             float bulletSpeed = currentWeapon.bulletSpeed;
             float bulletDamage = currentWeapon.bulletDamage;
 
-            var bullet = GameObject.Instantiate (playerWeapons.Bullet, data.GameObject[index].transform.position, Quaternion.identity);
+            //var bullet = GameObject.Instantiate (playerWeapons.Bullet, data.GameObject[index].transform.position, Quaternion.identity);
+            var bullet = playerWeapons.Bullet.GetPooledInstance<PlayerBullet>();
             PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet> ();
 
             var cosPosition = Mathf.Cos (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);

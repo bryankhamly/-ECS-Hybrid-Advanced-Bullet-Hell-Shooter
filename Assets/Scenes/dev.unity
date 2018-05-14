@@ -428,6 +428,12 @@ Prefab:
       propertyPath: defaultWeapon.angleSpread
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
+        type: 2}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 114933008916847950, guid: 0fdf09dc2fda14f4a8ecc7cbf1a8e4c8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
   m_IsPrefabParent: 0
