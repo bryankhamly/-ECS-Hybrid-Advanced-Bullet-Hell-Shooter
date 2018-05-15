@@ -480,7 +480,7 @@ Prefab:
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
       propertyPath: defaultWeapon.fireRate
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
@@ -500,7 +500,7 @@ Prefab:
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
       propertyPath: defaultWeapon.angleSpread
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
@@ -539,11 +539,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4068623950474230, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4068623950474230, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4820823008674304, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
       propertyPath: m_LocalPosition.y
@@ -589,7 +589,7 @@ Prefab:
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
       propertyPath: defaultWeapon.flashOffset.y
-      value: 1.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
@@ -749,7 +749,37 @@ MonoBehaviour:
   - objectName: PlayerBullet
     objectToSpawn: {fileID: 114495782019397050, guid: 0fdf09dc2fda14f4a8ecc7cbf1a8e4c8,
       type: 2}
-    amount: 25
+    amount: 50
+--- !u!1 &743453232 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1666805400738892, guid: 8a541418ca7082c428c42eaaac3a2479,
+    type: 2}
+  m_PrefabInternal: {fileID: 616282883}
+--- !u!61 &743453233
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743453232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0070386827, y: 0.34489775}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1548519, y: 0.7184508}
+  m_EdgeRadius: 0
 --- !u!4 &743453240 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4068623950474230, guid: 8a541418ca7082c428c42eaaac3a2479,
