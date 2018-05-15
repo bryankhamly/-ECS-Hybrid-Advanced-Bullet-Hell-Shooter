@@ -35,12 +35,12 @@ public class PlayerWeaponSystem : ComponentSystem
                         Shoot (i, j);
                     }
                 }
-            }      
+            }
         }
     }
 
     void Shoot (int index, int weaponIndex)
-    {    
+    {
         var playerWeapons = data.PlayerWeapons[index];
         var currentWeapon = playerWeapons.weaponList[weaponIndex];
         Transform shootPoint = playerWeapons.ShootPoint;
@@ -50,8 +50,8 @@ public class PlayerWeaponSystem : ComponentSystem
         if (currentWeapon.autoAim)
         {
             Vector3 diff = playerWeapons.Target.position - data.GameObject[index].transform.position;
-            float zRot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            shootPoint.rotation = Quaternion.Euler(0,0,zRot);
+            float zRot = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
+            shootPoint.rotation = Quaternion.Euler (0, 0, zRot);
             shootDir = shootPoint.right;
         }
         else
@@ -87,18 +87,23 @@ public class PlayerWeaponSystem : ComponentSystem
             float bulletSpeed = currentWeapon.bulletSpeed;
             float bulletDamage = currentWeapon.bulletDamage;
 
-            var bullet = playerWeapons.Bullet.GetPooledInstance<PlayerBullet>();
+            var bullet = playerWeapons.Bullet.GetPooledInstance<PlayerBullet> ();
             PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet> ();
 
             var cosPosition = Mathf.Cos (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
             var sinPosition = Mathf.Sin (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
 
+            //Initialize Bullet
             playerBullet.bulletStat = new BulletStats (bulletSpeed, bulletAngle, bulletDamage);
 
+            //Set Position
             var startPos = shootPoint.position + (shootPoint.transform.forward * (bulletXOffset.x - i * bulletXOffset.y));
             var bulletPos = new Vector2 (startPos.x + cosPosition, startPos.y + sinPosition);
 
             bullet.transform.position = bulletPos;
+
+            //Set Angle
+            bullet.transform.eulerAngles = new Vector3 (0, 0, TrigStuff.Radian2Degrees(bulletAngle));
 
             currentWeapon.timer = 0;
         }

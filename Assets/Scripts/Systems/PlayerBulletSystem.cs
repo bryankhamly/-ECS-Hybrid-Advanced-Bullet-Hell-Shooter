@@ -23,7 +23,7 @@ public class PlayerBulletSystem : ComponentSystem
             var stat = bullet.bulletStat;
             var transformXD = data.GameObject[i].transform;
             bullet.degree = TrigStuff.Radian2Degrees (bullet.bulletStat.angle);
-            transformXD.position = new Vector2 (transformXD.position.x + TrigStuff.CalculateCosinePos(stat.angle, stat.speed), transformXD.position.y + TrigStuff.CalculateSinePos(stat.angle, stat.speed));
+            transformXD.position = new Vector2 (transformXD.position.x + TrigStuff.CalculateCosinePos (stat.angle, stat.speed), transformXD.position.y + TrigStuff.CalculateSinePos (stat.angle, stat.speed));
         }
     }
 }

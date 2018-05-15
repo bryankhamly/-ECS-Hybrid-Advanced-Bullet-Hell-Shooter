@@ -13,7 +13,7 @@ public class Weapon
 	public Transform shootPoint;
 
 	[Header("Weapon Stats")]
-	[Range(0f, 1f)]
+	[Range(0f, 0.75f)]
 	public float fireRate;
 
 	[Header("Bullet Stats")]
