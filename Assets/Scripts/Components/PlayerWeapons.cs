@@ -6,7 +6,6 @@ public class PlayerWeapons : MonoBehaviour
 {
 	public Transform ShootPoint;
 	public Transform Target;
-	public PlayerBullet Bullet;
 
 	public Weapon defaultWeapon;
 	public List<Weapon> weaponList;

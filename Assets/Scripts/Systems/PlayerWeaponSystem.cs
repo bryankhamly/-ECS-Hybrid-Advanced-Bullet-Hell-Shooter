@@ -45,6 +45,9 @@ public class PlayerWeaponSystem : ComponentSystem
         var currentWeapon = playerWeapons.weaponList[weaponIndex];
         Transform shootPoint = playerWeapons.ShootPoint;
 
+        var flash = currentWeapon.muzzleFlash.GetPooledInstance<Muzzleflash> ();
+        flash.transform.position = (Vector2)shootPoint.position + currentWeapon.flashOffset;
+
         Vector2 shootDir;
 
         if (currentWeapon.autoAim)
@@ -88,7 +91,7 @@ public class PlayerWeaponSystem : ComponentSystem
             float bulletDamage = currentWeapon.bulletDamage;
             var bulletSpray = CalculateSpray (currentWeapon.bulletSpray);
 
-            var bullet = playerWeapons.Bullet.GetPooledInstance<PlayerBullet> ();
+            var bullet = currentWeapon.bullet.GetPooledInstance<PlayerBullet> ();
             PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet> ();
 
             var cosPosition = Mathf.Cos (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);

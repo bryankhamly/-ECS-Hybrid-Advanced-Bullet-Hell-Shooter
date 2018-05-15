@@ -25,14 +25,17 @@ public class Weapon
 	public float bulletSpeed;
 
 	[Header("Bullet Offsets")]
-	[Range(0f, 45f)]
-	public float angleSpread;//  \ | / etc
 	[Range(0f, 15f)]
-	public float xOffset;// |_|_| or |__|__|
+	public float angleSpread;//  \ | / etc
 	[Range(0f, 10f)]
+	public float xOffset;// |_|_| or |__|__|
+	[Range(0f, 4f)]
 	public float bulletSpray;// Randomized x,y for non-static pattern, basically accuracy?
 	
 	[Header("Effects")]
+	public PlayerBullet bullet;
+	public Muzzleflash muzzleFlash;
+	public Vector2 flashOffset;
 	public AudioClip shootSfx;
 
 	[Header("Timer")]
