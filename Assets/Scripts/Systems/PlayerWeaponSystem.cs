@@ -86,6 +86,7 @@ public class PlayerWeaponSystem : ComponentSystem
             float bulletAngle = angleRadian + bulletSpread.x + (i * bulletSpread.y);
             float bulletSpeed = currentWeapon.bulletSpeed;
             float bulletDamage = currentWeapon.bulletDamage;
+            var bulletSpray = CalculateSpray (currentWeapon.bulletSpray);
 
             var bullet = playerWeapons.Bullet.GetPooledInstance<PlayerBullet> ();
             PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet> ();
@@ -93,20 +94,27 @@ public class PlayerWeaponSystem : ComponentSystem
             var cosPosition = Mathf.Cos (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
             var sinPosition = Mathf.Sin (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
 
-            //Initialize Bullet
+            //Initialize Bullet (Man I love constructors but monobehaviours are lame sometimes.)
             playerBullet.bulletStat = new BulletStats (bulletSpeed, bulletAngle, bulletDamage);
 
             //Set Position
             var startPos = shootPoint.position + (shootPoint.transform.forward * (bulletXOffset.x - i * bulletXOffset.y));
-            var bulletPos = new Vector2 (startPos.x + cosPosition, startPos.y + sinPosition);
+            var bulletPos = new Vector2 (startPos.x + cosPosition + bulletSpray.x, startPos.y + sinPosition + bulletSpray.y);
 
             bullet.transform.position = bulletPos;
 
             //Set Angle
-            bullet.transform.eulerAngles = new Vector3 (0, 0, TrigStuff.Radian2Degrees(bulletAngle));
+            bullet.transform.eulerAngles = new Vector3 (0, 0, TrigStuff.Radian2Degrees (bulletAngle));
 
             currentWeapon.timer = 0;
         }
+    }
+
+    public Vector2 CalculateSpray (float value)
+    {
+        float xSpray = UnityEngine.Random.Range (0f, 1f) * value - value / 2;
+        float ySpray = UnityEngine.Random.Range (0f, 1f) * value - value / 2;
+        return new Vector2 (xSpray, ySpray);
     }
 
     public Tuple<float, float> CalculateSpread (float bulletCount, float value)

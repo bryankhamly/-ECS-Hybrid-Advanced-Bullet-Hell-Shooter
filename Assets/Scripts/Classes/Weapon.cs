@@ -29,6 +29,8 @@ public class Weapon
 	public float angleSpread;//  \ | / etc
 	[Range(0f, 15f)]
 	public float xOffset;// |_|_| or |__|__|
+	[Range(0f, 10f)]
+	public float bulletSpray;// Randomized x,y for non-static pattern, basically accuracy?
 	
 	[Header("Effects")]
 	public AudioClip shootSfx;
