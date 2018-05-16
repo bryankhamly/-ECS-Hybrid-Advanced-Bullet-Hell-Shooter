@@ -86,9 +86,10 @@ public class PlayerWeaponSystem : ComponentSystem
 
         for (int i = 0; i < currentWeapon.bulletsToShoot; i++)
         {
+            BulletType bulletType = currentWeapon.bulletType;
             float bulletAngle = angleRadian + bulletSpread.x + (i * bulletSpread.y);
             float bulletSpeed = currentWeapon.bulletSpeed;
-            float bulletDamage = currentWeapon.bulletDamage;
+            int bulletDamage = currentWeapon.bulletDamage;
             var bulletSpray = CalculateSpray (currentWeapon.bulletSpray);
 
             var bullet = currentWeapon.bullet.GetPooledInstance<PlayerBullet> ();
@@ -98,7 +99,7 @@ public class PlayerWeaponSystem : ComponentSystem
             var sinPosition = Mathf.Sin (angleRadian - Mathf.PI / 2) * (bulletXOffset.x - i * bulletXOffset.y);
 
             //Initialize Bullet (Man I love constructors but monobehaviours are lame sometimes.)
-            playerBullet.bulletStat = new BulletStats (bulletSpeed, bulletAngle, bulletDamage);
+            playerBullet.bulletStat = new BulletStats (bulletType, bulletSpeed, bulletAngle, bulletDamage);
 
             //Set Position
             var startPos = shootPoint.position + (shootPoint.transform.forward * (bulletXOffset.x - i * bulletXOffset.y));

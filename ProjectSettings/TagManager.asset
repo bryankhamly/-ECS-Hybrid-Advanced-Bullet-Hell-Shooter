@@ -17,9 +17,9 @@ TagManager:
   - PostProcessing
   - Boundary
   - Player
-  - 
-  - 
-  - 
+  - PlayerBullet
+  - EnemyBullet
+  - Enemy
   - 
   - 
   - 

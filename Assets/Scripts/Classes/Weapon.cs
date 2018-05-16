@@ -17,10 +17,11 @@ public class Weapon
 	public float fireRate;
 
 	[Header("Bullet Stats")]
+	public BulletType bulletType;
 	[Range(0f, 100f)]
 	public int bulletsToShoot;
 	[Range(0f, 100f)]
-	public float bulletDamage;
+	public int bulletDamage;
 	[Range(0f, 50f)]
 	public float bulletSpeed;
 
