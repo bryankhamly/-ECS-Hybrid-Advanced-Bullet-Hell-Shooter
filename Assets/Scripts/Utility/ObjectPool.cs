@@ -2,6 +2,7 @@
 using UnityEngine;
 
 //http://catlikecoding.com/unity/tutorials/object-pools/
+
 public class ObjectPool : MonoBehaviour
 {
 	PooledObject prefab;

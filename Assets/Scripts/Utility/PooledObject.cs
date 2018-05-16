@@ -24,7 +24,6 @@ public class PooledObject : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log ("I die!");
 			Destroy (gameObject);
 		}
 	}
