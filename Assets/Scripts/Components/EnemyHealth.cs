@@ -8,9 +8,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 	public int health = 100;
 	public bool dead;
 
+	public Animator anim;
+
 	void Start ()
 	{
 		health = maxHealth;
+		anim = GetComponent<Animator>();
 	}
 
 	public void TakeDamage (int value)
@@ -18,6 +21,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 		if (!dead)
 		{
 			health -= value;
+			anim.SetTrigger("damage");
 
 			if (health <= 0)
 			{

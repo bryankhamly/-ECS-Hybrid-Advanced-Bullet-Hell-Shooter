@@ -552,8 +552,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 114850125631168626, guid: 495b66f82378e9c48a50dd956bab63e8,
     type: 2}
-  timerPerSpawn: 3
-  timer: 3
+  timerPerSpawn: 2
+  timer: 2
 --- !u!114 &312102245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ Prefab:
     - target: {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479,
         type: 2}
       propertyPath: defaultWeapon.bulletDamage
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114795445573039290, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
