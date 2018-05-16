@@ -2,29 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : PooledObject
 {
 	public Waypoint myWaypoint;
 	public float speed;
+	public Transform currentPoint;
+	public int currentIndex;
 
-	// Use this for initialization
 	void Start ()
 	{
-
+		currentIndex = 1;
 	}
 
-	// Update is called once per frame
-	void Update ()
+	void OnDisable ()
 	{
-		/* 
-		var startPos = transform.position;
-		var endPos = wayPoint.position;
-		var wtf = startPos - endPos;
-		var hmm = Mathf.Atan2 (wtf.y, wtf.x) * Mathf.Rad2Deg;
-
-		if (Vector2.Distance (transform.position, endPos) > 0.25f)
-			transform.position += new Vector3 (Mathf.Cos (hmm) * Time.deltaTime, Mathf.Sin (hmm) * Time.deltaTime, 0);
-		*/
+		currentIndex = 1;
 	}
-
 }
