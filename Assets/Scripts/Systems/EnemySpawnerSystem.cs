@@ -32,7 +32,6 @@ public class EnemySpawnerSystem : ComponentSystem
 				var e = enemy.GetComponent<Enemy> ();
 				enemy.transform.position = wManager.wayPoints[randomNumber].points[0].position;
 				e.myWaypoint = wManager.wayPoints[randomNumber];
-				//Spawn
 				eSpawner.timer = 0;
 			}
 		}

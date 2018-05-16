@@ -7,7 +7,7 @@ public class WaypointManager : MonoBehaviour
 	public List<Waypoint> wayPoints;
 	public bool drawWaypoints;
 
-	void OnDrawGizmos ()
+	void OnDrawGizmosSelected ()
 	{
 		if (!drawWaypoints)
 			return;
