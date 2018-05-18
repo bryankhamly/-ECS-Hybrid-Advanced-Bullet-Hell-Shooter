@@ -2,6 +2,9 @@
 using Unity.Mathematics;
 using UnityEngine;
 
+//Inspired by Touhou and Bullet Heaven 2
+//Bryan Khamly
+
 public class TouhouBulletSystem : ComponentSystem
 {
 	private struct Data

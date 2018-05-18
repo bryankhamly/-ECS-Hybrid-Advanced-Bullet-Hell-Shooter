@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Inspired by Touhou and Bullet Heaven 2
+//Bryan Khamly
+
 public abstract class TouhouPattern : MonoBehaviour
 {
 	[Header ("[Bullet]")]
