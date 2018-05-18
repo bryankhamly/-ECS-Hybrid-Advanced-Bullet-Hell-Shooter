@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class TouhouPattern : MonoBehaviour
 {
+	[Header("[Bullet]")]
 	public bool available = true;
 	public TouhouBullet bulletPrefab;
 	public float bulletSpeed;

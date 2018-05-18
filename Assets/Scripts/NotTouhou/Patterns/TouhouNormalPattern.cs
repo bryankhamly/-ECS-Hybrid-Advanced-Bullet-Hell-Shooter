@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class TouhouNormalPattern : TouhouPattern
 {
+    [Header ("[Pattern]")]
     public float angle = 180f; // _____
     public float fireRate = 0.5f;
+
+    [Header ("AutoAim")]
+    public bool autoAim;
+    public Transform target;
 
     public override void ShootBullet ()
     {
         StartCoroutine (Shoot ());
+        if (autoAim)
+        {
+            StartCoroutine (Aim ());
+        }
     }
 
     IEnumerator Shoot ()
@@ -30,7 +39,24 @@ public class TouhouNormalPattern : TouhouPattern
         }
 
         available = true;
-        
+
+        yield break;
+    }
+
+    IEnumerator Aim ()
+    {
+        while (autoAim)
+        {
+            if (available)
+            {
+                yield break;
+            }
+
+            if (target)
+            {
+                angle = TrigStuff.CalculateZAngleDifference (transform.position, target.transform.position);
+            }
+        }
         yield break;
     }
 }

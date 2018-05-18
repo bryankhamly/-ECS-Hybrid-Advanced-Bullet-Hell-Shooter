@@ -30,4 +30,26 @@ public static class TrigStuff
 		y = Mathf.Sin (angle) * speed * Time.deltaTime;
 		return y;
 	}
+
+	public static float CircleAngle (float angle)
+	{
+		while (angle < 0f)
+		{
+			angle += 360f;
+		}
+		while (360f < angle)
+		{
+			angle -= 360f;
+		}
+		return angle;
+	}
+
+	public static float CalculateZAngleDifference (Vector2 pos1, Vector2 pos2)
+	{
+		var xDiff = pos2.x - pos1.x;
+		var yDiff = pos2.y - pos1.y;
+		var angle = Mathf.Atan2 (xDiff, yDiff) * Mathf.Rad2Deg;
+		angle = -CircleAngle (angle);
+		return angle;
+	}
 }

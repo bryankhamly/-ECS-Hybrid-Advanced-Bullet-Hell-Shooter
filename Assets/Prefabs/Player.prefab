@@ -42,10 +42,9 @@ GameObject:
   - component: {fileID: 50472769431840602}
   - component: {fileID: 114655781939065832}
   - component: {fileID: 61398173832089056}
-  - component: {fileID: 114795445573039290}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,8 +235,9 @@ MonoBehaviour:
     autoAim: 0
     shootPoint: {fileID: 0}
     fireRate: 0.25
+    bulletType: 0
     bulletsToShoot: 3
-    bulletDamage: 5
+    bulletDamage: 20
     bulletSpeed: 15
     angleSpread: 0.2
     xOffset: 0
@@ -249,24 +249,6 @@ MonoBehaviour:
     shootSfx: {fileID: 0}
     timer: 0
   weaponList: []
---- !u!114 &114795445573039290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1666805400738892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e4d5eda328ef734db050dc8eb8e647f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4096
-  colliderColor: {r: 0.2971698, g: 0.80982685, b: 1, a: 0.7411765}
-  radius: 0.275
-  offset: {x: 0, y: 0.39}
-  debugString: Player got hit!
 --- !u!212 &212453409219393546
 SpriteRenderer:
   m_ObjectHideFlags: 1
