@@ -2015,26 +2015,6 @@ MonoBehaviour:
   bulletAccel: 0
   bulletsToShoot: 50
   bulletsShot: []
---- !u!1 &1555277872 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1494545646358108, guid: 495b66f82378e9c48a50dd956bab63e8,
-    type: 2}
-  m_PrefabInternal: {fileID: 663792565}
---- !u!114 &1555277873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1555277872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72d2a08b64db734988df7b0b356244e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patternIndex: 0
-  weaponPatterns:
-  - {fileID: 1439451742}
-  - {fileID: 1544357607}
 --- !u!1 &1695022826
 GameObject:
   m_ObjectHideFlags: 0

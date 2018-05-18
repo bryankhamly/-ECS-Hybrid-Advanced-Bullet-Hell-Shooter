@@ -15,12 +15,4 @@ public class TouhouWeapon : MonoBehaviour
 		weaponPatterns[patternIndex].ShootBullet ();
 		yield break;
 	}
-
-	private void Update ()
-	{
-		if (Input.GetKeyDown (KeyCode.Space))
-		{
-			StartCoroutine (ShootPattern ());
-		}
-	}
 }
