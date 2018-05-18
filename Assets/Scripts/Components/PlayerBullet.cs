@@ -27,7 +27,7 @@ public class PlayerBullet : PooledObject
     {
         if (!IsVisibleFromCamera ())
         {
-            ReturnToPool();
+            ReturnToPool ();
         }
     }
 }

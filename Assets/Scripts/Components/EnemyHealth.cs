@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Could be a system with I used IComponentData but meh.
+
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
 	public int maxHealth = 100;

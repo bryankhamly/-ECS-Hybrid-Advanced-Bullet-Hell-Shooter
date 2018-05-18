@@ -18,8 +18,6 @@ public class CustomCollision : MonoBehaviour
 	public float radius;
 	public Vector2 offset;
 
-	public string debugString;
-
 	void Update ()
 	{
 		Collider2D[] colliders = Physics2D.OverlapCircleAll ((Vector2) transform.position + offset, radius, layerMask);
@@ -28,7 +26,6 @@ public class CustomCollision : MonoBehaviour
 		{
 			foreach (var item in colliders)
 			{
-				//Gunna need an interface to make this more modular [x]
 				var damageInterface = item.GetComponent<IDamageable> ();
 
 				if (bulletOwner == BulletOwner.Player)
@@ -37,7 +34,7 @@ public class CustomCollision : MonoBehaviour
 					var bulletStat = bullet.bulletStat;
 					var bulletDamage = bulletStat.damage;
 					var bulletType = bulletStat.bulletType;
-					
+
 					damageInterface.TakeDamage (bulletDamage);
 
 					if (bulletType == BulletType.Normal)
@@ -56,6 +53,7 @@ public class CustomCollision : MonoBehaviour
 				}
 			}
 		}
+
 	}
 
 	private void OnDrawGizmos ()

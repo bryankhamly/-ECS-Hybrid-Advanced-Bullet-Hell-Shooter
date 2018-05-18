@@ -2,8 +2,6 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-//This System had so many bugs !!, punishment for being lazy not caching some vars
-
 public class EnemySystem : ComponentSystem
 {
 	private struct Data
