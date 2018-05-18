@@ -20,7 +20,7 @@ public class TouhouNormalPattern : TouhouPattern
         }
 
         StartCoroutine (Shoot ());
-        
+
         if (autoAim)
         {
             StartCoroutine (Aim ());
@@ -41,7 +41,7 @@ public class TouhouNormalPattern : TouhouPattern
                 yield return new WaitForSeconds (fireRate);
             }
             var bullet = CreateBullet (transform.position, transform.rotation);
-            InitBullet (bullet, angle, bulletSpeed);
+            InitBullet (this, bullet, angle, bulletSpeed);
         }
 
         available = true;

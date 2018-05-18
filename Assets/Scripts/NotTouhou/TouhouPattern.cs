@@ -10,6 +10,8 @@ public abstract class TouhouPattern : MonoBehaviour
 	public float bulletSpeed;
 	public float bulletsToShoot;
 
+	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track
+
 	public TouhouBullet CreateBullet (Vector2 pos, Quaternion rot)
 	{
 		var bullet = bulletPrefab.GetPooledInstance<TouhouBullet> ();
@@ -18,9 +20,10 @@ public abstract class TouhouPattern : MonoBehaviour
 		return bullet;
 	}
 
-	public void InitBullet (TouhouBullet bullet, float angle, float speed)
+	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed)
 	{
-		bullet.Initialize (angle, speed);
+		bulletsShot.Add(bullet);
+		bullet.Initialize (pattern, angle, speed);
 	}
 
 	public abstract void ShootBullet ();
