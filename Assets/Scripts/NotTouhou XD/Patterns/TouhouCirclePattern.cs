@@ -13,7 +13,7 @@ public class TouhouCirclePattern : TouhouPattern
             var bullet = CreateBullet(transform.position, transform.rotation);
             float angle = angleOffset * i;
 
-            InitBullet(this, bullet, angle, bulletSpeed, bulletAccel);  
+            InitBullet(this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage);  
         }
 
 		available = true;

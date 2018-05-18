@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface IDamageable
 {
-	void TakeDamage(int value);
+	int maxHealth { get; set; }
+	int health { get; set; }
+	void TakeDamage (int value);
 }

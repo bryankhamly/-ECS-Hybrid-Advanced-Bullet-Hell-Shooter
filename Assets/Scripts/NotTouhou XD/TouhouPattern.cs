@@ -13,6 +13,7 @@ public abstract class TouhouPattern : MonoBehaviour
 	public float bulletSpeed;
 	public float bulletAccel;
 	public float bulletsToShoot;
+	public int bulletDamage;
 
 	[Header ("[Bullet List]")]
 	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track
@@ -25,10 +26,10 @@ public abstract class TouhouPattern : MonoBehaviour
 		return bullet;
 	}
 
-	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed, float accel)
+	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed, float accel, int damage)
 	{
 		bulletsShot.Add (bullet);
-		bullet.Initialize (pattern, angle, speed, accel);
+		bullet.Initialize (pattern, angle, speed, accel, damage);
 	}
 
 	public abstract void ShootBullet ();

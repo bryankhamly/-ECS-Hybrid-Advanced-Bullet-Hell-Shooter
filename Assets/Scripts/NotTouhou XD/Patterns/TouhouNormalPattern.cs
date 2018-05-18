@@ -42,7 +42,7 @@ public class TouhouNormalPattern : TouhouPattern
                 yield return new WaitForSeconds (fireRate);
             }
             var bullet = CreateBullet (transform.position, transform.rotation);
-            InitBullet (this, bullet, angle, bulletSpeed, bulletAccel);
+            InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage);
         }
 
         available = true;
