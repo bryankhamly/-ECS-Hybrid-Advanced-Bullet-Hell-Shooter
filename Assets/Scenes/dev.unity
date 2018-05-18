@@ -1015,7 +1015,7 @@ MonoBehaviour:
   - objectName: TouhouBullet
     objectToSpawn: {fileID: 114859479977592332, guid: aecc1682f1f2a49409232fae358a431f,
       type: 2}
-    amount: 100
+    amount: 250
 --- !u!1 &752400680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1904,8 @@ MonoBehaviour:
   available: 1
   bulletPrefab: {fileID: 114859479977592332, guid: aecc1682f1f2a49409232fae358a431f,
     type: 2}
-  bulletSpeed: 8
+  bulletSpeed: 5
+  bulletAccel: 0
   bulletsToShoot: 5
   bulletsShot: []
   angle: 180
@@ -2011,6 +2012,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114859479977592332, guid: aecc1682f1f2a49409232fae358a431f,
     type: 2}
   bulletSpeed: 7
+  bulletAccel: 0
   bulletsToShoot: 50
   bulletsShot: []
 --- !u!1 &1555277872 stripped
@@ -2029,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72d2a08b64db734988df7b0b356244e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternIndex: 1
+  patternIndex: 0
   weaponPatterns:
   - {fileID: 1439451742}
   - {fileID: 1544357607}

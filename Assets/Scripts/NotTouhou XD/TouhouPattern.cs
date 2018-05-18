@@ -11,6 +11,7 @@ public abstract class TouhouPattern : MonoBehaviour
 	public bool available = true;
 	public TouhouBullet bulletPrefab;
 	public float bulletSpeed;
+	public float bulletAccel;
 	public float bulletsToShoot;
 
 	[Header ("[Bullet List]")]
@@ -24,10 +25,10 @@ public abstract class TouhouPattern : MonoBehaviour
 		return bullet;
 	}
 
-	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed)
+	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed, float accel)
 	{
 		bulletsShot.Add (bullet);
-		bullet.Initialize (pattern, angle, speed);
+		bullet.Initialize (pattern, angle, speed, accel);
 	}
 
 	public abstract void ShootBullet ();

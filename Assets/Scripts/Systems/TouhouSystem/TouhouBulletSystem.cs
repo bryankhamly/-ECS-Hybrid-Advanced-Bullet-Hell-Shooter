@@ -29,6 +29,7 @@ public class TouhouBulletSystem : ComponentSystem
 
 			if (bullet.speed > 0)
 			{
+				bullet.speed += bullet.acceleration * dt;
 				mytransform.localPosition += mytransform.up.normalized * bullet.speed * dt;
 			}
 		}
