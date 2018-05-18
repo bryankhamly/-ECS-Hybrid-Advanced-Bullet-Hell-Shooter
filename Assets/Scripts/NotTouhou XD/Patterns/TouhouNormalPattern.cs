@@ -5,6 +5,7 @@ using UnityEngine;
 public class TouhouNormalPattern : TouhouPattern
 {
     [Header ("[Pattern]")]
+    [Range (0f, 360f)]
     public float angle = 180f; // _____
     public float fireRate = 0.5f;
 
