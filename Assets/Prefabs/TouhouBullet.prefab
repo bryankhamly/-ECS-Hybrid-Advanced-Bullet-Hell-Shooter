@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 64938743111910666}
   - component: {fileID: 114859479977592332}
   - component: {fileID: 114976292811641182}
+  - component: {fileID: 114584551720907842}
   m_Layer: 0
   m_Name: TouhouBullet
   m_TagString: Untagged
@@ -100,6 +101,24 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114584551720907842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777013777211288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4d5eda328ef734db050dc8eb8e647f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletOwner: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  colliderColor: {r: 1, g: 0, b: 0, a: 0.53333336}
+  radius: 0.15
+  offset: {x: 0, y: 0}
 --- !u!114 &114859479977592332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 0
   speed: 0
+  acceleration: 0
 --- !u!114 &114976292811641182
 MonoBehaviour:
   m_ObjectHideFlags: 1

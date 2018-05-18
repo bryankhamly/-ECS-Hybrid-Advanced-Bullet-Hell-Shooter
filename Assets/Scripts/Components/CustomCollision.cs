@@ -30,7 +30,7 @@ public class CustomCollision : MonoBehaviour
 
 				if (bulletOwner == BulletOwner.Player)
 				{
-					var bullet = GetComponent<PlayerBullet> ();
+					var bullet = GetComponentInParent<PlayerBullet> ();
 					var bulletStat = bullet.bulletStat;
 					var bulletDamage = bulletStat.damage;
 					var bulletType = bulletStat.bulletType;
@@ -50,6 +50,9 @@ public class CustomCollision : MonoBehaviour
 				else if (bulletOwner == BulletOwner.Enemy)
 				{
 					//Once I add in EnemyBullet
+					var bullet = GetComponentInParent<TouhouBullet>();
+					//Do damage to player here
+					bullet.ReturnToPool();
 				}
 			}
 		}
