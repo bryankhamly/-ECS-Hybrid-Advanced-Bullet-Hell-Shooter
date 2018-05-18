@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 50472769431840602}
   - component: {fileID: 114655781939065832}
   - component: {fileID: 61398173832089056}
+  - component: {fileID: 114989185004750810}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -249,6 +250,21 @@ MonoBehaviour:
     shootSfx: {fileID: 0}
     timer: 0
   weaponList: []
+--- !u!114 &114989185004750810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666805400738892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f5216e95b0d6049a45a70699ea5026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 5
+  _health: 0
+  invuln: 0
+  dead: 0
 --- !u!212 &212453409219393546
 SpriteRenderer:
   m_ObjectHideFlags: 1

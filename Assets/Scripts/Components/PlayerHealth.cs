@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//No system needed for this! 
+//System works best when it can batch handle logic. This is only on 1 player object.
+
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
 	public int maxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
