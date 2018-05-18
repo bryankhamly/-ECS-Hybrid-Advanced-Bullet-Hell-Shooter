@@ -14,7 +14,13 @@ public class TouhouNormalPattern : TouhouPattern
 
     public override void ShootBullet ()
     {
+        if (autoAim)
+        {
+            LookAtTarget ();
+        }
+
         StartCoroutine (Shoot ());
+        
         if (autoAim)
         {
             StartCoroutine (Aim ());
@@ -43,6 +49,14 @@ public class TouhouNormalPattern : TouhouPattern
         yield break;
     }
 
+    void LookAtTarget ()
+    {
+        if (target)
+        {
+            angle = TrigStuff.CalculateZAngleDifference (transform.position, target.transform.position);
+        }
+    }
+
     IEnumerator Aim ()
     {
         while (autoAim)
@@ -52,10 +66,9 @@ public class TouhouNormalPattern : TouhouPattern
                 yield break;
             }
 
-            if (target)
-            {
-                angle = TrigStuff.CalculateZAngleDifference (transform.position, target.transform.position);
-            }
+            LookAtTarget ();
+
+            yield return 0;
         }
         yield break;
     }
