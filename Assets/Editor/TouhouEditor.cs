@@ -28,6 +28,13 @@ public class TouhouEditor : Editor
 				touhouPattern.ShootBullet ();
 			}
 		}
+		if (GUILayout.Button ("Stop"))
+		{
+			if (Application.isPlaying && touhouPattern.gameObject.activeInHierarchy)
+			{
+				touhouPattern.StopShooting ();
+			}
+		}
 		GUILayout.EndVertical ();
 
 		if (GUI.changed)

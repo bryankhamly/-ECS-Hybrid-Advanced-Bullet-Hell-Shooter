@@ -38,4 +38,10 @@ public abstract class TouhouPattern : MonoBehaviour
 	{
 		available = true;
 	}
+
+	public void StopShooting()
+	{
+		available = true;
+		StopAllCoroutines();
+	}
 }
