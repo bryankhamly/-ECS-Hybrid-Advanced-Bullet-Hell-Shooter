@@ -4,12 +4,13 @@ using UnityEngine;
 
 public abstract class TouhouPattern : MonoBehaviour
 {
-	[Header("[Bullet]")]
+	[Header ("[Bullet]")]
 	public bool available = true;
 	public TouhouBullet bulletPrefab;
 	public float bulletSpeed;
 	public float bulletsToShoot;
 
+	[Header ("[Bullet List]")]
 	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track
 
 	public TouhouBullet CreateBullet (Vector2 pos, Quaternion rot)
@@ -22,7 +23,7 @@ public abstract class TouhouPattern : MonoBehaviour
 
 	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed)
 	{
-		bulletsShot.Add(bullet);
+		bulletsShot.Add (bullet);
 		bullet.Initialize (pattern, angle, speed);
 	}
 

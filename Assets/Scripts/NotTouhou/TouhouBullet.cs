@@ -19,11 +19,9 @@ public class TouhouBullet : PooledObject
 
 	private void Update ()
 	{
-		transform.localPosition += transform.up.normalized * speed * Time.deltaTime;
-
 		if (!IsVisibleFromCamera ())
 		{
-			pattern.bulletsShot.Remove(this);
+			pattern.bulletsShot.Remove (this);
 			ReturnToPool ();
 		}
 	}
