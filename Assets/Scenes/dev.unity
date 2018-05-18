@@ -1182,8 +1182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f5216e95b0d6049a45a70699ea5026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 10
   _health: 0
+  dead: 0
 --- !u!1 &1002304851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1926,7 @@ MonoBehaviour:
   bulletSpeed: 5
   bulletAccel: 0
   bulletsToShoot: 5
-  bulletDamage: 5
+  bulletDamage: 1
   bulletsShot: []
   angle: 180
   fireRate: 0.3
@@ -2033,7 +2034,7 @@ MonoBehaviour:
   bulletSpeed: 7
   bulletAccel: 0
   bulletsToShoot: 50
-  bulletDamage: 6
+  bulletDamage: 1
   bulletsShot: []
 --- !u!1 &1695022826
 GameObject:

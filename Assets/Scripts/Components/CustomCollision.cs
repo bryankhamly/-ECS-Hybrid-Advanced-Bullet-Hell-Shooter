@@ -50,11 +50,15 @@ public class CustomCollision : MonoBehaviour
 				else if (bulletOwner == BulletOwner.Enemy)
 				{
 					//Once I add in EnemyBullet
-					var bullet = GetComponentInParent<TouhouBullet>();
+					var bullet = GetComponentInParent<TouhouBullet> ();
 					var bulletDamage = bullet.damage;
+					var playerHealth = item.GetComponent<PlayerHealth> ();
 					//Do damage to player here
+					if (!playerHealth.invuln)
+					{
+						bullet.ReturnToPool ();
+					}
 					damageInterface.TakeDamage (bulletDamage);
-					bullet.ReturnToPool();
 				}
 			}
 		}
