@@ -52,4 +52,10 @@ public static class TrigStuff
 		angle = -CircleAngle (angle);
 		return angle;
 	}
+
+	public static float CalculateAngleOffset (int dirIndex, float dankAngle, float angleOffset)
+	{
+		float angle = dirIndex % 2 == 0 ? dankAngle - (angleOffset * (float) dirIndex / 2f) : dankAngle + (angleOffset * Mathf.Ceil ((float) dirIndex / 2f));
+		return angle;
+	}
 }
