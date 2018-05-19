@@ -49,10 +49,11 @@ public class TouhouBirdshotPattern : TouhouPattern
 			{
 				dirIndex = 0;
 
-				bulletSpeed -= fireRate;
-				while (bulletSpeed <= 0)
+				bSpeed -= fireRate;
+
+				while (bSpeed <= 0)
 				{
-					bulletSpeed += Mathf.Abs (fireRate);
+					bSpeed += Mathf.Abs (fireRate);
 				}
 			}
 
@@ -62,12 +63,11 @@ public class TouhouBirdshotPattern : TouhouPattern
 
 			float angle = CalculateOffset (dirIndex, dankAngle, angleOffset);
 
-			InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
+			InitBullet (this, bullet, angle, bSpeed, bulletAccel, bulletDamage, bulletStrafe);
 
 			dirIndex++;
 		}
 
-		ResetBulletSpeed();
 		available = true;
 	}
 

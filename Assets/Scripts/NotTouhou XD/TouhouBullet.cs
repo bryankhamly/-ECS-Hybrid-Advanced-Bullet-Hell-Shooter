@@ -20,6 +20,8 @@ public class TouhouBullet : PooledObject
 	private TouhouPattern pattern;
 	private TouhouPattern explodePattern;
 
+	PooledObject explosion;
+
 	public void Initialize (TouhouPattern pattern, float angle, float speed, float accel, int damage, float strafe) //Too bad can't use a constructor on MonoBehaviours
 	{
 		this.pattern = pattern;
@@ -36,6 +38,8 @@ public class TouhouBullet : PooledObject
 			this.explode = true;
 			this.explodeTime = dankPattern.explosionDelay;
 			this.explodeTimer = 0;
+			if (dankPattern.explosionPrefab)
+				this.explosion = dankPattern.explosionPrefab;
 		}
 
 		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, angle);
@@ -54,7 +58,13 @@ public class TouhouBullet : PooledObject
 				TouhouPattern tp = explosionObject.GetComponent<TouhouPattern> ();
 				tp = explodePattern;
 				tp.gameObject.transform.position = transform.position;
+				if (explosion)
+				{
+					var explosionXD = explosion.GetPooledInstance<PooledObject> ();
+					explosionXD.transform.position = transform.position;
+				}
 				tp.ShootBullet ();
+				Destroy(explosionObject, 1);
 				ResetExplosion ();
 				PoolCleanup ();
 			}

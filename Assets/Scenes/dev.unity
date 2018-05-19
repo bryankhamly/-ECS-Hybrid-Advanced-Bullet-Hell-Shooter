@@ -269,11 +269,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 663792566}
     m_Modifications:
-    - target: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
-        type: 2}
-      propertyPath: bulletsShot.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4742649665299540, guid: 7a4cf8d6ab1527f478a1b2397b9318b5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1136,6 +1131,30 @@ MonoBehaviour:
     objectToSpawn: {fileID: 114359945828203930, guid: f2d1ac73d6dc73b4ca3943fd767bf758,
       type: 2}
     amount: 300
+  - objectName: TouhouBullet
+    objectToSpawn: {fileID: 114102953237380322, guid: 1b918b834a5b318409e74347d260896a,
+      type: 2}
+    amount: 300
+  - objectName: TouhouBullet
+    objectToSpawn: {fileID: 114169655702386892, guid: 7c1fc540e6207f84ca6d007169c56f4f,
+      type: 2}
+    amount: 300
+  - objectName: TouhouBullet
+    objectToSpawn: {fileID: 114780748842909798, guid: ad68e173df46c124e9795cbf9d6e04e3,
+      type: 2}
+    amount: 300
+  - objectName: TouhouBullet
+    objectToSpawn: {fileID: 114522310182925428, guid: ec4232aa6bfa22143841f902b5a484c4,
+      type: 2}
+    amount: 300
+  - objectName: TouhouBullet
+    objectToSpawn: {fileID: 114166609051930596, guid: bf9a37212c11f7f44bb96a277b896960,
+      type: 2}
+    amount: 300
+  - objectName: Explosion
+    objectToSpawn: {fileID: 114619653080353036, guid: 205eebd7c99f0af46a6d7436cc4f3234,
+      type: 2}
+    amount: 30
 --- !u!1 &752400680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1431,53 @@ Transform:
   m_Father: {fileID: 1766979036}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1001 &1044165537
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 663792566}
+    m_Modifications:
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126010028097812, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114403520072360640, guid: a5cfb94e085e1cf4a96428fe8bd2947e,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 865671701}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a5cfb94e085e1cf4a96428fe8bd2947e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1045684981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,62 +2015,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1791154542
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1791154543}
-  - component: {fileID: 1791154544}
-  m_Layer: 0
-  m_Name: KaboomerFactory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1791154543
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1791154542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 663792566}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1791154544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1791154542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f09920f7b9fd604a9201785312fccfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  available: 1
-  bulletPrefab: {fileID: 114359945828203930, guid: f2d1ac73d6dc73b4ca3943fd767bf758,
-    type: 2}
-  bulletSpeed: 5
-  bulletAccel: 0
-  bulletsToShoot: 1
-  bulletDamage: 1
-  bulletStrafe: 0
-  bulletsShot: []
-  angle: 180
-  patternToExplode: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
-    type: 2}
-  explosionDelay: 1
-  autoAim: 0
-  target: {fileID: 865671701}
-  explosionPrefab: {fileID: 0}
 --- !u!1 &1923783440
 GameObject:
   m_ObjectHideFlags: 0
