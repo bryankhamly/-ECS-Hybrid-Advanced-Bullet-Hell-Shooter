@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   available: 1
-  bulletPrefab: {fileID: 114359945828203930, guid: f2d1ac73d6dc73b4ca3943fd767bf758,
+  bulletPrefab: {fileID: 114392900137163410, guid: 6483a5dd5dcdc5d4e9c6fbdd75a6e143,
     type: 2}
   bulletSpeed: 5
   bulletAccel: 0
