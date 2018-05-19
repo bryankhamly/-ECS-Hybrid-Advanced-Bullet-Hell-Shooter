@@ -12,9 +12,23 @@ public class TouhouMultishotPattern : TouhouPattern
 	public float angleOffset;
 	public float fireRate;
 
+	[Header ("AutoAim")]
+	public bool autoAim;
+	public Transform target;
+
 	public override void ShootBullet ()
 	{
+		if (autoAim)
+		{
+			LookAtTarget ();
+		}
+
 		StartCoroutine (Shoot ());
+
+		if (autoAim)
+		{
+			StartCoroutine (Aim ());
+		}
 	}
 
 	private IEnumerator Shoot ()
@@ -62,5 +76,29 @@ public class TouhouMultishotPattern : TouhouPattern
 			aimAngle - (angleOffset * (float) index / 2f) :
 			aimAngle + (angleOffset * Mathf.Ceil ((float) index / 2f));
 		return angle;
+	}
+
+	void LookAtTarget ()
+	{
+		if (target)
+		{
+			aimAngle = TrigStuff.CalculateZAngleDifference (transform.position, target.transform.position);
+		}
+	}
+
+	IEnumerator Aim ()
+	{
+		while (autoAim)
+		{
+			if (available)
+			{
+				yield break;
+			}
+
+			LookAtTarget ();
+
+			yield return 0;
+		}
+		yield break;
 	}
 }
