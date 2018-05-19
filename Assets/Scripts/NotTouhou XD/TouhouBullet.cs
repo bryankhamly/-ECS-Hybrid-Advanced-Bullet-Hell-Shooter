@@ -13,7 +13,12 @@ public class TouhouBullet : PooledObject
 	public int damage;
 	public float strafe;
 
+	public bool explode;
+	public float explodeTime;
+	public float explodeTimer;
+
 	private TouhouPattern pattern;
+	private TouhouPattern explodePattern;
 
 	public void Initialize (TouhouPattern pattern, float angle, float speed, float accel, int damage, float strafe) //Too bad can't use a constructor on MonoBehaviours
 	{
@@ -23,11 +28,40 @@ public class TouhouBullet : PooledObject
 		this.acceleration = accel;
 		this.damage = damage;
 		this.strafe = strafe;
+
+		if (typeof (TouhouKaboomer).IsAssignableFrom (pattern.GetType ()))
+		{
+			var dankPattern = (TouhouKaboomer) pattern;
+			this.explodePattern = dankPattern.patternToExplode;
+			this.explode = true;
+			this.explodeTime = dankPattern.explosionDelay;
+			this.explodeTimer = 0;
+		}
+
 		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, angle);
 	}
 
 	private void Update ()
 	{
+		if (explode)
+		{
+			explodeTimer += Time.deltaTime;
+			if (explodeTime < explodeTimer)
+			{
+				//Explosion!
+				GameObject explosionObject = new GameObject();
+				explosionObject.AddComponent(explodePattern.GetType());
+				TouhouPattern tp = explosionObject.GetComponent<TouhouPattern>();
+				tp = explodePattern;
+				tp.gameObject.transform.position = transform.position;
+				tp.ShootBullet();
+
+				explode = false;
+				explodeTimer = 0;
+				ReturnToPool();
+			}
+		}
+
 		if (!IsVisibleFromCamera ())
 		{
 			pattern.bulletsShot.Remove (this);
