@@ -58,6 +58,8 @@ public class TouhouBullet : PooledObject
 
 				explode = false;
 				explodeTimer = 0;
+
+				pattern.bulletsShot.Remove (this);
 				ReturnToPool();
 			}
 		}
