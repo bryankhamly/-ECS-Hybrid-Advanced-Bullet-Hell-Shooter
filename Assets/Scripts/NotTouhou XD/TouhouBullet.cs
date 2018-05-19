@@ -55,9 +55,7 @@ public class TouhouBullet : PooledObject
 				tp = explodePattern;
 				tp.gameObject.transform.position = transform.position;
 				tp.ShootBullet ();
-
 				ResetExplosion ();
-
 				PoolCleanup ();
 			}
 		}
@@ -89,7 +87,7 @@ public class TouhouBullet : PooledObject
 		explodeTimer = 0;
 	}
 
-	void PoolCleanup ()
+	public void PoolCleanup ()
 	{
 		pattern.bulletsShot.Remove (this);
 		ReturnToPool ();

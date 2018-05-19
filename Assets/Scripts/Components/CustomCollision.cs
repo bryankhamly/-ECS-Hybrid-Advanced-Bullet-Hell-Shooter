@@ -56,7 +56,7 @@ public class CustomCollision : MonoBehaviour
 					//Do damage to player here
 					if (!playerHealth.invuln)
 					{
-						bullet.ReturnToPool ();
+						bullet.PoolCleanup();
 					}
 					damageInterface.TakeDamage (bulletDamage);
 				}
