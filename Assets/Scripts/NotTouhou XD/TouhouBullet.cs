@@ -33,6 +33,11 @@ public class TouhouBullet : PooledObject
 		}
 	}
 
+	private void OnDisable ()
+	{
+
+	}
+
 	bool IsVisibleFromCamera ()
 	{
 		bool visible;

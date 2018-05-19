@@ -15,8 +15,20 @@ public abstract class TouhouPattern : MonoBehaviour
 	public float bulletsToShoot;
 	public int bulletDamage;
 
+	float oldSpeed;
+
 	[Header ("[Bullet List]")]
 	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track
+
+	private void Awake ()
+	{
+		oldSpeed = bulletSpeed;
+	}
+
+	public void ResetBulletSpeed ()
+	{
+		bulletSpeed = oldSpeed;
+	}
 
 	public TouhouBullet CreateBullet (Vector2 pos, Quaternion rot)
 	{
@@ -39,9 +51,9 @@ public abstract class TouhouPattern : MonoBehaviour
 		available = true;
 	}
 
-	public void StopShooting()
+	public void StopShooting ()
 	{
 		available = true;
-		StopAllCoroutines();
+		StopAllCoroutines ();
 	}
 }
