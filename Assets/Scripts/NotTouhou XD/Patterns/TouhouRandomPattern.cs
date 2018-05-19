@@ -20,6 +20,10 @@ public class TouhouRandomPattern : TouhouPattern
 	[Range (0, 2)]
 	public float maxFireRate;
 
+	[Header ("[Spin]")]
+	public bool spin;
+	public float angleOffset;
+
 	[Header ("[AutoAim]")]
 	public bool autoAim;
 	public Transform target;
@@ -46,34 +50,59 @@ public class TouhouRandomPattern : TouhouPattern
 
 		available = false;
 
-		var bulletList = new List<int> ((int) bulletsToShoot);
-
-		for (int i = 0; i < bulletsToShoot; i++)
+		if (spin)
 		{
-			bulletList.Add (i);
-		}
-
-		while (0 < bulletList.Count)
-		{
-			int index = Random.Range (0, bulletList.Count);
-			var bullet = CreateBullet (transform.position, transform.rotation);
-
-			float bulletSpeedXD = Random.Range (minSpeed, maxSpeed);
-
-			float minAngle = aimAngle - (angleRange / 2f);
-			float maxAngle = aimAngle + (angleRange / 2f);
-			float angle = 0f;
-
-			angle = Random.Range (minAngle, maxAngle);
-
-			InitBullet (this, bullet, angle, bulletSpeedXD, bulletAccel, bulletDamage, bulletStrafe);
-
-			bulletList.RemoveAt (index);
-
-			if (0 < bulletList.Count && 0f <= minFireRate && 0f < maxFireRate)
+			for (int i = 0; i < bulletsToShoot; i++)
 			{
-				float randomFireRate = Random.Range (minFireRate, maxFireRate);
-				yield return new WaitForSeconds (randomFireRate);
+				if (0 < i && 0f <= minFireRate && 0f < maxFireRate)
+				{
+					float randomFireRate = Random.Range (minFireRate, maxFireRate);
+					yield return new WaitForSeconds (randomFireRate);
+				}
+
+				var bullet = CreateBullet (transform.position, transform.rotation);
+
+				float bulletSpeedXD = Random.Range (minSpeed, maxSpeed);
+
+				float midAngle = aimAngle + (angleOffset * i);
+				float minAngle = midAngle - (angleRange / 2f);
+				float maxAngle = midAngle + (angleRange / 2f);
+				float angle = Random.Range (minAngle, maxAngle);
+
+				InitBullet (this, bullet, angle, bulletSpeedXD, bulletAccel, bulletDamage, bulletStrafe);
+			}
+		}
+		else
+		{
+			var bulletList = new List<int> ((int) bulletsToShoot);
+
+			for (int i = 0; i < bulletsToShoot; i++)
+			{
+				bulletList.Add (i);
+			}
+
+			while (0 < bulletList.Count)
+			{
+				int index = Random.Range (0, bulletList.Count);
+				var bullet = CreateBullet (transform.position, transform.rotation);
+
+				float bulletSpeedXD = Random.Range (minSpeed, maxSpeed);
+
+				float minAngle = aimAngle - (angleRange / 2f);
+				float maxAngle = aimAngle + (angleRange / 2f);
+				float angle = 0f;
+
+				angle = Random.Range (minAngle, maxAngle);
+
+				InitBullet (this, bullet, angle, bulletSpeedXD, bulletAccel, bulletDamage, bulletStrafe);
+
+				bulletList.RemoveAt (index);
+
+				if (0 < bulletList.Count && 0f <= minFireRate && 0f < maxFireRate)
+				{
+					float randomFireRate = Random.Range (minFireRate, maxFireRate);
+					yield return new WaitForSeconds (randomFireRate);
+				}
 			}
 		}
 
