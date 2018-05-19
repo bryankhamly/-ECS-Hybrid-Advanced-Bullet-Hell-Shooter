@@ -9,7 +9,7 @@ public class TouhouNormalPattern : TouhouPattern
     public float angle = 180f; // _____
     public float fireRate = 0.5f;
 
-    [Header ("AutoAim")]
+    [Header ("[AutoAim]")]
     public bool autoAim;
     public Transform target;
 
@@ -42,7 +42,7 @@ public class TouhouNormalPattern : TouhouPattern
                 yield return new WaitForSeconds (fireRate);
             }
             var bullet = CreateBullet (transform.position, transform.rotation);
-            InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage);
+            InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
         }
 
         available = true;

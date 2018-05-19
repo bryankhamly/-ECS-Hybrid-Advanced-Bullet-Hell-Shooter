@@ -14,6 +14,8 @@ public abstract class TouhouPattern : MonoBehaviour
 	public float bulletAccel;
 	public float bulletsToShoot;
 	public int bulletDamage;
+	[Range(-90f,90f)]
+	public float bulletStrafe;
 
 	float oldSpeed;
 
@@ -38,10 +40,10 @@ public abstract class TouhouPattern : MonoBehaviour
 		return bullet;
 	}
 
-	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed, float accel, int damage)
+	public void InitBullet (TouhouPattern pattern, TouhouBullet bullet, float angle, float speed, float accel, int damage, float strafe)
 	{
 		bulletsShot.Add (bullet);
-		bullet.Initialize (pattern, angle, speed, accel, damage);
+		bullet.Initialize (pattern, angle, speed, accel, damage, strafe);
 	}
 
 	public abstract void ShootBullet ();

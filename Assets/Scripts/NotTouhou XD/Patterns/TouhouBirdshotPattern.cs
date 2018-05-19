@@ -12,7 +12,7 @@ public class TouhouBirdshotPattern : TouhouPattern
 	public float angleOffset;
 	public float fireRate;
 
-	[Header ("AutoAim")]
+	[Header ("[AutoAim]")]
 	public bool autoAim;
 	public Transform target;
 
@@ -62,7 +62,7 @@ public class TouhouBirdshotPattern : TouhouPattern
 
 			float angle = CalculateOffset (dirIndex, dankAngle, angleOffset);
 
-			InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage);
+			InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
 
 			dirIndex++;
 		}

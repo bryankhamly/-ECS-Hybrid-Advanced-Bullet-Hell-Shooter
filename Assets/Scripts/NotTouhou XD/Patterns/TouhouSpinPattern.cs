@@ -38,7 +38,7 @@ public class TouhouSpinPattern : TouhouPattern
 
 			float angle = 0 + (angleOffset * i) * ((int)spinDirection);
 
-			InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage);
+			InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
 		}
 
 		available = true;

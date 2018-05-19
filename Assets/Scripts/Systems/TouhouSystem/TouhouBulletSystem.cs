@@ -29,6 +29,9 @@ public class TouhouBulletSystem : ComponentSystem
 
 			if (bullet.speed > 0)
 			{
+				float strafeAngle = bullet.strafe * dt;
+				mytransform.eulerAngles = new Vector3 (mytransform.eulerAngles.x, mytransform.eulerAngles.y, mytransform.eulerAngles.z + strafeAngle);
+
 				bullet.speed += bullet.acceleration * dt;
 				mytransform.localPosition += mytransform.up.normalized * bullet.speed * dt;
 			}

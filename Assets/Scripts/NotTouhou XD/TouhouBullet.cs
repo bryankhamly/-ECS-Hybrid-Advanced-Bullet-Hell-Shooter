@@ -11,16 +11,18 @@ public class TouhouBullet : PooledObject
 	public float speed;
 	public float acceleration;
 	public int damage;
+	public float strafe;
 
 	private TouhouPattern pattern;
 
-	public void Initialize (TouhouPattern pattern, float angle, float speed, float accel, int damage) //Too bad can't use a constructor on MonoBehaviours
+	public void Initialize (TouhouPattern pattern, float angle, float speed, float accel, int damage, float strafe) //Too bad can't use a constructor on MonoBehaviours
 	{
 		this.pattern = pattern;
 		this.angle = angle;
 		this.speed = speed;
 		this.acceleration = accel;
 		this.damage = damage;
+		this.strafe = strafe;
 		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, angle);
 	}
 
@@ -31,11 +33,6 @@ public class TouhouBullet : PooledObject
 			pattern.bulletsShot.Remove (this);
 			ReturnToPool ();
 		}
-	}
-
-	private void OnDisable ()
-	{
-
 	}
 
 	bool IsVisibleFromCamera ()
