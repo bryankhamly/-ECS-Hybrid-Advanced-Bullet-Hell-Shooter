@@ -49,25 +49,22 @@ public class TouhouBullet : PooledObject
 			if (explodeTime < explodeTimer)
 			{
 				//Explosion!
-				GameObject explosionObject = new GameObject();
-				explosionObject.AddComponent(explodePattern.GetType());
-				TouhouPattern tp = explosionObject.GetComponent<TouhouPattern>();
+				GameObject explosionObject = new GameObject ();
+				explosionObject.AddComponent (explodePattern.GetType ());
+				TouhouPattern tp = explosionObject.GetComponent<TouhouPattern> ();
 				tp = explodePattern;
 				tp.gameObject.transform.position = transform.position;
-				tp.ShootBullet();
+				tp.ShootBullet ();
 
-				explode = false;
-				explodeTimer = 0;
+				ResetExplosion ();
 
-				pattern.bulletsShot.Remove (this);
-				ReturnToPool();
+				PoolCleanup ();
 			}
 		}
 
 		if (!IsVisibleFromCamera ())
 		{
-			pattern.bulletsShot.Remove (this);
-			ReturnToPool ();
+			PoolCleanup ();
 		}
 	}
 
@@ -84,5 +81,17 @@ public class TouhouBullet : PooledObject
 			visible = false;
 		}
 		return visible;
+	}
+
+	void ResetExplosion ()
+	{
+		explode = false;
+		explodeTimer = 0;
+	}
+
+	void PoolCleanup ()
+	{
+		pattern.bulletsShot.Remove (this);
+		ReturnToPool ();
 	}
 }
