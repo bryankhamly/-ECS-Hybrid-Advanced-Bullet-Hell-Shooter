@@ -28,8 +28,8 @@ public class PlayerMovementSystem : ComponentSystem
             var dt = Time.deltaTime;
             var rb = data.Rb[i];
 
-            float hAxis = Input.GetAxis(horizontalAxis);
-            float vAxis = Input.GetAxis(verticalAxis);
+            float hAxis = Input.GetAxisRaw(horizontalAxis);
+            float vAxis = Input.GetAxisRaw(verticalAxis);
             
             rb.velocity = new float2(hAxis, vAxis) * speed;     
         }
