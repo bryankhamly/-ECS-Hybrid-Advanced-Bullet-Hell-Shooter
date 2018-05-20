@@ -45,8 +45,11 @@ public class PlayerWeaponSystem : ComponentSystem
         var currentWeapon = playerWeapons.weaponList[weaponIndex];
         Transform shootPoint = playerWeapons.ShootPoint;
 
-        var flash = currentWeapon.muzzleFlash.GetPooledInstance<Muzzleflash> ();
-        flash.transform.position = (Vector2)shootPoint.position + currentWeapon.flashOffset;
+        if (currentWeapon.muzzleFlash)
+        {
+            var flash = currentWeapon.muzzleFlash.GetPooledInstance<Muzzleflash> ();
+            flash.transform.position = (Vector2) shootPoint.position + currentWeapon.flashOffset;
+        }
 
         Vector2 shootDir;
 
