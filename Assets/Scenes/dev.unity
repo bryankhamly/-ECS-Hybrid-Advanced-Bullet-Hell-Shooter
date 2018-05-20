@@ -1209,6 +1209,10 @@ MonoBehaviour:
     objectToSpawn: {fileID: 114392900137163410, guid: 6483a5dd5dcdc5d4e9c6fbdd75a6e143,
       type: 2}
     amount: 300
+  - objectName: Explosion
+    objectToSpawn: {fileID: 114905313836134918, guid: cbbf28867ca804b4bb9eed00aa425ffe,
+      type: 2}
+    amount: 50
 --- !u!1 &752400680
 GameObject:
   m_ObjectHideFlags: 0

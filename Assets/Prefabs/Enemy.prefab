@@ -130,6 +130,8 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 0
   dead: 0
+  explosion: {fileID: 114905313836134918, guid: cbbf28867ca804b4bb9eed00aa425ffe,
+    type: 2}
   anim: {fileID: 0}
 --- !u!212 &212982068691779016
 SpriteRenderer:

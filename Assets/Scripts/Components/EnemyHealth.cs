@@ -15,13 +15,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 	private int _health;
 
 	public bool dead;
+	public PooledObject explosion;
 
 	public Animator anim;
 
 	void Start ()
 	{
 		health = maxHealth;
-		anim = GetComponent<Animator> ();
+		if (anim == null)
+			anim = GetComponent<Animator> ();
 	}
 
 	public void TakeDamage (int value)
@@ -33,6 +35,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
 			if (health <= 0)
 			{
+				var explosionXD = explosion.GetPooledInstance<PooledObject> ();
+				explosionXD.transform.position = transform.position;
 				dead = true;
 				GetComponent<Enemy> ().ReturnToPool ();
 			}
