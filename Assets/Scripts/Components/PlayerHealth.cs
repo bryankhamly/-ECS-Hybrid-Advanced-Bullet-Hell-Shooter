@@ -52,6 +52,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 		if (!dead)
 		{
+			Camera.main.GetComponent<CameraShake>().shakeTimer = 0;
 			health -= value;
 
 			//dead check
