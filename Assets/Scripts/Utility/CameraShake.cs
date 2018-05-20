@@ -16,6 +16,7 @@ public class CameraShake : MonoBehaviour
 		shakeTimer = shakeTime;
 	}
 
+	//Could have made it a coroutine but got too lazy, didn't put it as a priority XD
 	void Update ()
 	{
 		shakeTimer += Time.deltaTime;

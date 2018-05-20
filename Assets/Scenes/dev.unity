@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &312102242
 Transform:
   m_ObjectHideFlags: 0
@@ -852,6 +852,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 951187613c5ca26478ae2d50ce68671a,
         type: 3}
+    - target: {fileID: 4820823008674304, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.186
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114655781939065832, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
@@ -1150,7 +1154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectSpawns:
   - objectName: PlayerBullet
-    objectToSpawn: {fileID: 114495782019397050, guid: 0fdf09dc2fda14f4a8ecc7cbf1a8e4c8,
+    objectToSpawn: {fileID: 114241544814184238, guid: 4e83274e7f14e04429c84bdf76611995,
       type: 2}
     amount: 100
   - objectName: RegularFlash
@@ -1618,6 +1622,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1126012455 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4820823008674304, guid: 8a541418ca7082c428c42eaaac3a2479,
+    type: 2}
+  m_PrefabInternal: {fileID: 616282883}
 --- !u!1 &1205206498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,6 +1986,44 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 381ac647d923e2b4bacaae5eeb46dc4d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1625634372 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1666805400738892, guid: 8a541418ca7082c428c42eaaac3a2479,
+    type: 2}
+  m_PrefabInternal: {fileID: 616282883}
+--- !u!114 &1625634373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625634372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0d3b002e26a8a4f911dd6b83882428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootPoint: {fileID: 1126012455}
+  Target: {fileID: 0}
+  defaultWeapon:
+    name: Default
+    active: 1
+    requireInput: 0
+    autoAim: 0
+    shootPoint: {fileID: 0}
+    fireRate: 0.25
+    bulletType: 0
+    bulletsToShoot: 3
+    bulletDamage: 20
+    bulletSpeed: 15
+    angleSpread: 0.2
+    xOffset: 0
+    bulletSpray: 0
+    bullet: {fileID: 114241544814184238, guid: 4e83274e7f14e04429c84bdf76611995, type: 2}
+    muzzleFlash: {fileID: 0}
+    flashOffset: {x: 0, y: 0}
+    shootSfx: {fileID: 0}
+    timer: 0
+  weaponList: []
 --- !u!1 &1695022826
 GameObject:
   m_ObjectHideFlags: 0

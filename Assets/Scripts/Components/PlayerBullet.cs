@@ -11,7 +11,7 @@ public class PlayerBullet : PooledObject
     bool IsVisibleFromCamera ()
     {
         bool visible;
-        var rend = GetComponent<Renderer> ();
+        var rend = GetComponentInChildren<Renderer> ();
         if (rend.IsVisibleFrom (Camera.main))
         {
             visible = true;
