@@ -4,29 +4,44 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+	bool started;
+	public bool loop;
 	public EnemyPhase[] phases;
 
 	IEnumerator ShootPhase (int phaseIndex)
 	{
-		List<EnemyAttack> attacks = new List<EnemyAttack> ();
-
-		for (int i = 0; i < phases[phaseIndex].enemyAttacks.Length; i++)
+		while (started)
 		{
-			attacks.Add (phases[phaseIndex].enemyAttacks[i]);
+			List<EnemyAttack> attacks = new List<EnemyAttack> ();
 
-			foreach (var item in phases[phaseIndex].enemyAttacks[i].patterns)
+			for (int i = 0; i < phases[phaseIndex].enemyAttacks.Length; i++)
 			{
-				item.ShootBullet ();
+				attacks.Add (phases[phaseIndex].enemyAttacks[i]);
+
+				foreach (var item in phases[phaseIndex].enemyAttacks[i].patterns)
+				{
+					item.ShootBullet ();
+				}
+
+				yield return new WaitForSeconds (phases[phaseIndex].enemyAttacks[i].timeToWait);
+				attacks.Remove (phases[phaseIndex].enemyAttacks[i]);
 			}
 
-			yield return new WaitForSeconds (phases[phaseIndex].enemyAttacks[i].timeToWait);
-			attacks.Remove (phases[phaseIndex].enemyAttacks[i]);
+			if (loop)
+			{
+				started = true;
+			}
+			else
+			{
+				started = false;
+			}
 		}
 	}
 
-	public void StartPhase(int index)
+	public void StartPhase (int index)
 	{
-		StartCoroutine(ShootPhase(index));
+		started = true;
+		StartCoroutine (ShootPhase (index));
 	}
 
 	public void StopPhase ()

@@ -169,6 +169,12 @@ Transform:
   m_Father: {fileID: 312102242}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71242012 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 239302169}
+  m_Script: {fileID: 11500000, guid: f75828c43e2ee1a41a1f5df563d05278, type: 3}
 --- !u!1 &131136840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,22 +1233,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ce3020087e3c24094b292faaab3a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loop: 1
   phases:
   - phaseName: Phase 0
     enemyAttacks:
     - attackName: Normal
       patterns:
       - {fileID: 746107352}
-      timeToWait: 4
+      timeToWait: 2
     - attackName: Circle
       patterns:
-      - {fileID: 986196857}
-      timeToWait: 6
-    - attackName: Random and Kaboom
+      - {fileID: 71242012}
+      timeToWait: 2
+    - attackName: Spin+Kaboom
       patterns:
-      - {fileID: 1634460754}
+      - {fileID: 986196857}
       - {fileID: 1474312642}
-      timeToWait: 4
+      timeToWait: 5
 --- !u!1 &725941522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,12 +2240,6 @@ MonoBehaviour:
     shootSfx: {fileID: 0}
     timer: 0
   weaponList: []
---- !u!114 &1634460754 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114234489023478552, guid: 381ac647d923e2b4bacaae5eeb46dc4d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1588651992}
-  m_Script: {fileID: 11500000, guid: 86c42bfbb84d6cc48ad8df693b87f397, type: 3}
 --- !u!1 &1695022826
 GameObject:
   m_ObjectHideFlags: 0
