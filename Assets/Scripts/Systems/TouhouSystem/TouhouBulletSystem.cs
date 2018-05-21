@@ -27,7 +27,7 @@ public class TouhouBulletSystem : ComponentSystem
 			var mytransform = data.transforms[i];
 			var dt = Time.deltaTime;
 
-			if (bullet.speed > 0)
+			if (bullet.speed != 0)
 			{
 				float strafeAngle = bullet.strafe * dt;
 				mytransform.eulerAngles = new Vector3 (mytransform.eulerAngles.x, mytransform.eulerAngles.y, mytransform.eulerAngles.z + strafeAngle);
