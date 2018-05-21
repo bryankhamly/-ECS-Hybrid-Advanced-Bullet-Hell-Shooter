@@ -12,9 +12,13 @@ public class TouhouSpinPattern : TouhouPattern
 {
 	[Header ("[Pattern]")]
 	public SpinDirection spinDirection;
-	[Range(1, 180)]
+	[Range (1, 180)]
 	public float angleOffset;
 	public float fireRate;
+
+	[Header ("[Sprinkler]")]
+	public bool sprinkler;
+	public int sprinkly;
 
 	public override void ShootBullet ()
 	{
@@ -28,21 +32,48 @@ public class TouhouSpinPattern : TouhouPattern
 
 		available = false;
 
-		for (int i = 0; i < bulletsToShoot; i++)
+		float sprinklerOffset = 360f / sprinkly;
+
+		int sprinklerIndex = 0;
+
+		if (sprinkler)
 		{
-			if (0 < i && 0f < fireRate)
+			for (int i = 0; i < bulletsToShoot; i++)
 			{
-				yield return new WaitForSeconds (fireRate);
+				if (sprinkly <= sprinklerIndex)
+				{
+					sprinklerIndex = 0;
+					if (0f < fireRate)
+					{
+						yield return new WaitForSeconds (fireRate);
+					}
+				}
+
+				var bullet = CreateBullet (transform.position, transform.rotation);
+
+				float angle = 180 + (sprinklerOffset * sprinklerIndex) + (angleOffset * Mathf.Floor (i / sprinkly));
+				InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
+				sprinklerIndex++;
 			}
-			var bullet = CreateBullet (transform.position, transform.rotation);
 
-			float angle = 0 + (angleOffset * i) * ((int)spinDirection);
+		}
+		else
+		{
+			for (int i = 0; i < bulletsToShoot; i++)
+			{
+				if (0 < i && 0f < fireRate)
+				{
+					yield return new WaitForSeconds (fireRate);
+				}
+				var bullet = CreateBullet (transform.position, transform.rotation);
 
-			InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
+				float angle = 0 + (angleOffset * i) * ((int) spinDirection);
+
+				InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
+			}
 		}
 
 		available = true;
-
 		yield break;
 	}
 }
