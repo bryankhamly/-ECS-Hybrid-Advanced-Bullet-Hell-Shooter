@@ -1207,47 +1207,47 @@ MonoBehaviour:
   - objectName: TouhouBullet1
     objectToSpawn: {fileID: 114359945828203930, guid: f2d1ac73d6dc73b4ca3943fd767bf758,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet2
     objectToSpawn: {fileID: 114102953237380322, guid: 1b918b834a5b318409e74347d260896a,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet3
     objectToSpawn: {fileID: 114169655702386892, guid: 7c1fc540e6207f84ca6d007169c56f4f,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet4
     objectToSpawn: {fileID: 114780748842909798, guid: ad68e173df46c124e9795cbf9d6e04e3,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet5
     objectToSpawn: {fileID: 114522310182925428, guid: ec4232aa6bfa22143841f902b5a484c4,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet6
     objectToSpawn: {fileID: 114166609051930596, guid: bf9a37212c11f7f44bb96a277b896960,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet7
     objectToSpawn: {fileID: 114902648113317908, guid: abc5abacc44afb74f8544eae8f4446c6,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet8
     objectToSpawn: {fileID: 114861385941639584, guid: aa79a9fdae49d7a4a9ffc4f00d44d9b8,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet9
     objectToSpawn: {fileID: 114905028165624364, guid: cb4be148d65f8324cab2e2f3d4dc1954,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet10
     objectToSpawn: {fileID: 114687396044867154, guid: 3809305a84a46e14ba45bbe1991b20cd,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: TouhouBullet11
     objectToSpawn: {fileID: 114392900137163410, guid: 6483a5dd5dcdc5d4e9c6fbdd75a6e143,
       type: 2}
-    amount: 300
+    amount: 500
   - objectName: Explosion
     objectToSpawn: {fileID: 114905313836134918, guid: cbbf28867ca804b4bb9eed00aa425ffe,
       type: 2}
