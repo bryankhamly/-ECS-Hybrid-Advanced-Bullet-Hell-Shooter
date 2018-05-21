@@ -51,7 +51,7 @@ public class TouhouSpinPattern : TouhouPattern
 
 				var bullet = CreateBullet (transform.position, transform.rotation);
 
-				float angle = 180 + (sprinklerOffset * sprinklerIndex) + (angleOffset * Mathf.Floor (i / sprinkly));
+				float angle = 180 + (sprinklerOffset * sprinklerIndex) + (angleOffset * Mathf.Floor (i / sprinkly)) * ((int) spinDirection);
 				InitBullet (this, bullet, angle, bulletSpeed, bulletAccel, bulletDamage, bulletStrafe);
 				sprinklerIndex++;
 			}
