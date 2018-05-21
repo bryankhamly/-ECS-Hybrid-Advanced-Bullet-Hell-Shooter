@@ -56,7 +56,7 @@ MonoBehaviour:
     type: 2}
   bulletSpeed: 5
   bulletAccel: 0
-  bulletsToShoot: 50
+  bulletsToShoot: 250
   bulletDamage: 1
   bulletStrafe: 0
   bulletsShot: []
@@ -66,3 +66,5 @@ MonoBehaviour:
   fireRate: 0.1
   autoAim: 0
   target: {fileID: 0}
+  spin: 0
+  spinAngle: 10

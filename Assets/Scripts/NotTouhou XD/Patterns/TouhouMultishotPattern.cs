@@ -16,6 +16,10 @@ public class TouhouMultishotPattern : TouhouPattern
 	public bool autoAim;
 	public Transform target;
 
+	[Header ("[Spin]")]
+	public bool spin;
+	public float spinAngle;
+
 	public override void ShootBullet ()
 	{
 		if (autoAim)
@@ -56,7 +60,19 @@ public class TouhouMultishotPattern : TouhouPattern
 
 			var bullet = CreateBullet (transform.position, transform.rotation);
 
-			float dankAngle = directionCount % 2 == 0 ? aimAngle - (angleOffset / 2f) : aimAngle;
+			float spinDankAngle = aimAngle + (spinAngle * Mathf.Floor (i / directionCount));
+			float dankAngle;
+			
+			if (spin)
+			{
+				dankAngle = directionCount % 2 == 0 ? spinDankAngle - (angleOffset / 2f) : spinDankAngle;
+
+			}
+			else
+			{
+				dankAngle = directionCount % 2 == 0 ? aimAngle - (angleOffset / 2f) : aimAngle;
+
+			}
 
 			float angle = CalculateOffset (dirIndex, dankAngle, angleOffset);
 
