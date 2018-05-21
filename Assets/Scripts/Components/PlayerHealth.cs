@@ -24,8 +24,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	Color c255 = new Color ();
 	Color c0 = new Color ();
 
+	public Transform lifeIcon;
+	public List<Transform> lifeIcons;
+
 	private void Start ()
 	{
+		foreach (Transform child in lifeIcon)
+		{
+			lifeIcons.Add (child);
+		}
+
 		if (sprite == null)
 			sprite = GetComponentInChildren<SpriteRenderer> ();
 		health = maxHealth;
@@ -52,8 +60,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 		if (!dead)
 		{
-			Camera.main.GetComponent<CameraShake>().shakeTimer = 0;
+			Camera.main.GetComponent<CameraShake> ().shakeTimer = 0;
 			health -= value;
+
+			GameObject topkek = lifeIcons[lifeIcons.Count - 1].gameObject;
+			lifeIcons.RemoveAt (lifeIcons.Count - 1);
+			Destroy (topkek);
 
 			//dead check
 			if (health <= 0)

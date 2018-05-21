@@ -132,6 +132,7 @@ MonoBehaviour:
   dead: 0
   explosion: {fileID: 114905313836134918, guid: cbbf28867ca804b4bb9eed00aa425ffe,
     type: 2}
+  drop: {fileID: 114440689271101974, guid: c9b5ce31aae2d364ca52538626b87533, type: 2}
   anim: {fileID: 0}
 --- !u!212 &212982068691779016
 SpriteRenderer:

@@ -7,7 +7,8 @@ using UnityEngine;
 public enum BulletOwner
 {
 	Player,
-	Enemy
+	Enemy,
+	Drop
 }
 
 public class CustomCollision : MonoBehaviour
@@ -59,6 +60,13 @@ public class CustomCollision : MonoBehaviour
 						bullet.PoolCleanup();
 					}
 					damageInterface.TakeDamage (bulletDamage);
+				}
+				else if (bulletOwner == BulletOwner.Drop)
+				{
+					var obj = GetComponent<PooledObject> ();
+					var points = item.GetComponent<PlayerPoints>();
+					points.AddPoints(100);
+					obj.ReturnToPool();
 				}
 			}
 		}

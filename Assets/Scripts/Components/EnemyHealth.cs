@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
 	public bool dead;
 	public PooledObject explosion;
+	public PooledObject drop;
 
 	public Animator anim;
 
@@ -37,6 +38,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 			{
 				var explosionXD = explosion.GetPooledInstance<PooledObject> ();
 				explosionXD.transform.position = transform.position;
+
+				var dropXD = drop.GetPooledInstance<PooledObject> ();
+				dropXD.transform.position = transform.position;
+				Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D>();
+				dropRb.AddForce(new Vector2(0, 250));
+
 				dead = true;
 				GetComponent<Enemy> ().ReturnToPool ();
 			}
