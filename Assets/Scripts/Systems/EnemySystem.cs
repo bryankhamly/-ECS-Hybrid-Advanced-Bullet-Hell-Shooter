@@ -35,8 +35,9 @@ public class EnemySystem : ComponentSystem
 					{
 						if (data.enemy[i].currentIndex + 1 >= data.enemy[i].myWaypoint.points.Count)
 						{
-							Enemy e = data.enemy[i];
-							e.ReturnToPool ();
+							
+								Enemy e = data.enemy[i];
+								e.ReturnToPool ();
 						}
 						else
 						{

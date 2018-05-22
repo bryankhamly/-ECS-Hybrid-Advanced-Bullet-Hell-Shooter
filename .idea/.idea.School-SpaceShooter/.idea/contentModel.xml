@@ -3,28 +3,75 @@
   <component name="ContentModelStore">
     <e p="C:\Users\kohin\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_School-SpaceShooter.1710660650.00" t="ExcludeRecursive" />
     <e p="C:\Users\kohin\Documents\Pewpew\School-SpaceShooter" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="PhaseEditor.cs" t="Include" />
+          <e p="TouhouEditor.cs" t="Include" />
+          <e p="WaypointEditor.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Classes" t="Include">
+            <e p="EnemyAttack.cs" t="Include" />
+            <e p="EnemyBehavior.cs" t="Include" />
+            <e p="EnemyPhase.cs" t="Include" />
+            <e p="Wave.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
           </e>
           <e p="Components" t="Include">
+            <e p="CustomCollision.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyHealth.cs" t="Include" />
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="Muzzleflash.cs" t="Include" />
             <e p="PlayerBullet.cs" t="Include" />
+            <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+            <e p="PlayerPoints.cs" t="Include" />
             <e p="PlayerWeapons.cs" t="Include" />
+            <e p="WaveManager.cs" t="Include" />
+            <e p="WaypointManager.cs" t="Include" />
+          </e>
+          <e p="Interfaces" t="Include">
+            <e p="IDamageable.cs" t="Include" />
+          </e>
+          <e p="NotTouhou XD" t="Include">
+            <e p="Patterns" t="Include">
+              <e p="TouhouBirdshotPattern.cs" t="Include" />
+              <e p="TouhouCirclePattern.cs" t="Include" />
+              <e p="TouhouKaboomer.cs" t="Include" />
+              <e p="TouhouMultishotPattern.cs" t="Include" />
+              <e p="TouhouNormalPattern.cs" t="Include" />
+              <e p="TouhouRandomPattern.cs" t="Include" />
+              <e p="TouhouSpinPattern.cs" t="Include" />
+            </e>
+            <e p="TouhouBullet.cs" t="Include" />
+            <e p="TouhouPattern.cs" t="Include" />
+            <e p="TouhouWeapon.cs" t="Include" />
           </e>
           <e p="Structs" t="Include">
             <e p="BulletStats.cs" t="Include" />
+            <e p="ObjectSpawns.cs" t="Include" />
+            <e p="Waypoint.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
+            <e p="CollisionSystem.cs" t="Include" />
+            <e p="EnemySpawnerSystem.cs" t="Include" />
+            <e p="EnemySystem.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="PlayerBulletSystem.cs" t="Include" />
             <e p="PlayerMovementSystem.cs" t="Include" />
             <e p="PlayerWeaponSystem.cs" t="Include" />
+            <e p="TouhouSystem" t="Include">
+              <e p="TouhouBulletSystem.cs" t="Include" />
+            </e>
           </e>
           <e p="Utility" t="Include">
+            <e p="CameraShake.cs" t="Include" />
             <e p="ObjectPool.cs" t="Include" />
+            <e p="ObjectPoolInitializer.cs" t="Include" />
+            <e p="PatternTester.cs" t="Include" />
             <e p="PooledObject.cs" t="Include" />
             <e p="RendererExtensions.cs" t="Include" />
             <e p="TrigStuff.cs" t="Include" />
