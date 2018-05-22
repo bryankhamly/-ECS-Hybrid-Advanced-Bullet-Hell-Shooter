@@ -461,6 +461,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
+        type: 2}
+      propertyPath: aimAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 865671701}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a4cf8d6ab1527f478a1b2397b9318b5, type: 2}
   m_IsPrefabParent: 0
