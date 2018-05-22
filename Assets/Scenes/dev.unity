@@ -2958,10 +2958,10 @@ MonoBehaviour:
     requireInput: 0
     autoAim: 0
     shootPoint: {fileID: 0}
-    fireRate: 0.25
+    fireRate: 0.13
     bulletType: 0
     bulletsToShoot: 3
-    bulletDamage: 20
+    bulletDamage: 10
     bulletSpeed: 15
     angleSpread: 0.2
     xOffset: 0
