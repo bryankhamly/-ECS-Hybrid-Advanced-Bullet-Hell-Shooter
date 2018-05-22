@@ -17,8 +17,13 @@ public class TouhouBullet : PooledObject
 	public float explodeTime;
 	public float explodeTimer;
 
+	public bool follow;
+
 	private TouhouPattern pattern;
 	private TouhouPattern explodePattern;
+	private TouhouPattern followPattern;
+
+	GameObject childPattern;
 
 	PooledObject explosion;
 
@@ -38,6 +43,7 @@ public class TouhouBullet : PooledObject
 			this.explode = true;
 			this.explodeTime = dankPattern.explosionDelay;
 			this.explodeTimer = 0;
+			this.follow = dankPattern.follow;
 			if (dankPattern.explosionPrefab)
 				this.explosion = dankPattern.explosionPrefab;
 		}
@@ -47,26 +53,60 @@ public class TouhouBullet : PooledObject
 
 	private void Update ()
 	{
+		if (followPattern)
+		{
+			if (followPattern.available == true)
+			{
+				Destroy (childPattern);
+				PoolCleanup ();
+			}
+		}
+
 		if (explode)
 		{
 			explodeTimer += Time.deltaTime;
 			if (explodeTime < explodeTimer)
 			{
 				//Explosion!
-				GameObject explosionObject = new GameObject ();
-				explosionObject.AddComponent (explodePattern.GetType ());
+				GameObject explosionObject = Instantiate (explodePattern.gameObject, transform.position, Quaternion.identity);
+				childPattern = explosionObject;
+				//explosionObject.AddComponent (explodePattern.GetType ());
 				TouhouPattern tp = explosionObject.GetComponent<TouhouPattern> ();
-				tp = explodePattern;
-				tp.gameObject.transform.position = transform.position;
+
+				if (follow)
+				{
+					tp.gameObject.transform.SetParent (transform);
+					tp.gameObject.transform.localPosition = Vector2.zero;
+				}
+				else
+				{
+					tp.gameObject.transform.position = transform.position;
+				}
+
 				if (explosion)
 				{
 					var explosionXD = explosion.GetPooledInstance<PooledObject> ();
 					explosionXD.transform.position = transform.position;
 				}
+
 				tp.ShootBullet ();
-				Destroy(explosionObject, 1);
+
+				if(!follow)
+				{
+					tp.destroyOnDone = true;
+				}
+				//Destroy (explosionObject, 1);
+
 				ResetExplosion ();
-				PoolCleanup ();
+
+				if (follow)
+				{
+					followPattern = tp;
+				}
+				else
+				{
+					PoolCleanup ();
+				}
 			}
 		}
 
@@ -99,6 +139,8 @@ public class TouhouBullet : PooledObject
 
 	public void PoolCleanup ()
 	{
+		if (followPattern)
+			Destroy (childPattern);
 		pattern.bulletsShot.Remove (this);
 		ReturnToPool ();
 	}

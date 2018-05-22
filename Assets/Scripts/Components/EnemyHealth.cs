@@ -41,8 +41,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
 				var dropXD = drop.GetPooledInstance<PooledObject> ();
 				dropXD.transform.position = transform.position;
-				Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D>();
-				dropRb.AddForce(new Vector2(0, 250));
+				Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D> ();
+				dropRb.AddForce (new Vector2 (0, 250));
 
 				dead = true;
 				GetComponent<Enemy> ().ReturnToPool ();

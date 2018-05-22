@@ -19,6 +19,8 @@ public class TouhouKaboomer : TouhouPattern
     [Header ("[Effect]")]
     public PooledObject explosionPrefab; //Spawn on explosion
 
+    public bool follow;
+
     public override void ShootBullet ()
     {
         if (autoAim)

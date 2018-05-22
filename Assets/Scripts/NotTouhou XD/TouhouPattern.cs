@@ -14,10 +14,13 @@ public abstract class TouhouPattern : MonoBehaviour
 	public float bulletAccel;
 	public float bulletsToShoot;
 	public int bulletDamage;
-	[Range(-90f,90f)]
+	[Range (-90f, 90f)]
 	public float bulletStrafe;
 
 	float oldSpeed;
+
+	[HideInInspector]
+	public bool destroyOnDone;
 
 	[Header ("[Bullet List]")]
 	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track
@@ -25,6 +28,14 @@ public abstract class TouhouPattern : MonoBehaviour
 	private void Awake ()
 	{
 		oldSpeed = bulletSpeed;
+	}
+
+	private void Update ()
+	{
+		if (available == true && destroyOnDone == true)
+		{
+			Destroy (gameObject);
+		}
 	}
 
 	public void ResetBulletSpeed ()
