@@ -16,19 +16,22 @@ public class Enemy : PooledObject
 
 	private void OnEnable ()
 	{
-		var sprite = GetComponent<SpriteRenderer> ();
-		sprite.color = Color.white;
-		sprite.material.color = Color.white;
+		ResetHurt ();
 	}
 
 	void OnDisable ()
 	{
 		var enemyHealth = GetComponent<EnemyHealth> ();
-		var sprite = GetComponent<SpriteRenderer> ();
-		sprite.color = Color.white;
-		sprite.material.color = Color.white;
+		ResetHurt ();
 		enemyHealth.health = enemyHealth.maxHealth;
 		enemyHealth.dead = false;
 		currentIndex = 1;
+	}
+
+	void ResetHurt ()
+	{
+		var sprite = GetComponent<SpriteRenderer> ();
+		sprite.color = Color.white;
+		sprite.material.color = Color.white;
 	}
 }
