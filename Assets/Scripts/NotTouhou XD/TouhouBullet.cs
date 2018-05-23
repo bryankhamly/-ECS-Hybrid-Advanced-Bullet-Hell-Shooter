@@ -51,6 +51,8 @@ public class TouhouBullet : PooledObject
 		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, angle);
 	}
 
+	//Good lord, this code would be a mess as a System in ECS.
+	
 	private void Update ()
 	{
 		if (followPattern)

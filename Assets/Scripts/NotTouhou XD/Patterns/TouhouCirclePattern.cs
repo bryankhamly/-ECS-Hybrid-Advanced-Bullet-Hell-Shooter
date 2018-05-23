@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class TouhouCirclePattern : TouhouPattern
 {
-    [Header ("Half Circles")]
+    [Header ("[Half Circles]")]
     public bool useHalfCircle;
     [Range (0f, 360f)]
     public float aimAngle = 90f;
+
+    [Header ("[AutoAim (For Half Circles)]")]
     public bool autoAim;
     public Transform target;
 
