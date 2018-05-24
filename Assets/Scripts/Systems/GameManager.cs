@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour
 
 	void InitializePlayer()
 	{
-		//player = Instantiate(PlayerPrefab, SpawnPos, Quaternion.identity);
+		player = Instantiate(PlayerPrefab, SpawnPos, Quaternion.identity);
 	}
 }

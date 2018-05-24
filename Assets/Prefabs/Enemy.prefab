@@ -116,6 +116,7 @@ MonoBehaviour:
   speed: 2
   currentPoint: {fileID: 0}
   currentIndex: 0
+  myGroup: []
 --- !u!114 &114907166688268486
 MonoBehaviour:
   m_ObjectHideFlags: 1

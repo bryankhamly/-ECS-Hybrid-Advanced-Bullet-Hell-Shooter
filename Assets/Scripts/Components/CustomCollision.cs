@@ -32,20 +32,24 @@ public class CustomCollision : MonoBehaviour
 				if (bulletOwner == BulletOwner.Player)
 				{
 					var bullet = GetComponentInParent<PlayerBullet> ();
-					var bulletStat = bullet.bulletStat;
-					var bulletDamage = bulletStat.damage;
-					var bulletType = bulletStat.bulletType;
-
-					damageInterface.TakeDamage (bulletDamage);
-
-					if (bulletType == BulletType.Normal)
+					if (bullet)
 					{
-						bullet.ReturnToPool ();
+						var bulletStat = bullet.bulletStat;
+						var bulletDamage = bulletStat.damage;
+						var bulletType = bulletStat.bulletType;
+
+						damageInterface.TakeDamage (bulletDamage);
+
+						if (bulletType == BulletType.Normal)
+						{
+							bullet.ReturnToPool ();
+						}
+						else if (bulletType == BulletType.Piercing)
+						{
+							//Nothing, let it ReturnToPool once its out of the camera.
+						}
 					}
-					else if (bulletType == BulletType.Piercing)
-					{
-						//Nothing, let it ReturnToPool once its out of the camera.
-					}
+		
 
 				}
 				else if (bulletOwner == BulletOwner.Enemy)

@@ -58,12 +58,14 @@ MonoBehaviour:
   bulletAccel: 0
   bulletsToShoot: 1
   bulletDamage: 1
-  bulletStrafe: 0
+  bulletStrafe: 75
+  destroyOnDone: 0
   bulletsShot: []
-  angle: 180
-  patternToExplode: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
+  angle: 90
+  patternToExplode: {fileID: 114234489023478552, guid: 381ac647d923e2b4bacaae5eeb46dc4d,
     type: 2}
   explosionDelay: 1
   autoAim: 0
   target: {fileID: 0}
   explosionPrefab: {fileID: 0}
+  follow: 0

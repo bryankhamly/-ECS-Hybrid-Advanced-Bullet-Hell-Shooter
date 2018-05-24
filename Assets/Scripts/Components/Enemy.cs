@@ -9,6 +9,8 @@ public class Enemy : PooledObject
 	public Transform currentPoint;
 	public int currentIndex;
 
+	public List<Enemy> myGroup;
+
 	void Start ()
 	{
 		currentIndex = 1;
@@ -21,6 +23,7 @@ public class Enemy : PooledObject
 
 	void OnDisable ()
 	{
+		myGroup.Remove(this);
 		var enemyHealth = GetComponent<EnemyHealth> ();
 		ResetHurt ();
 		enemyHealth.health = enemyHealth.maxHealth;

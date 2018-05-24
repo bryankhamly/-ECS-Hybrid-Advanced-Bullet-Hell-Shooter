@@ -7,6 +7,8 @@ public class WaypointManager : MonoBehaviour
 	public List<Waypoint> wayPoints;
 	public bool drawWaypoints;
 
+	private int enemyCount = 5;
+
 	void OnDrawGizmosSelected ()
 	{
 		if (!drawWaypoints)
