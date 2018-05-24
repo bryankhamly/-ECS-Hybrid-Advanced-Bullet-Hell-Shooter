@@ -12,10 +12,11 @@ public class GameManager : MonoBehaviour
 	void Start () 
 	{
 		InitializePlayer();
+		Application.targetFrameRate = 60;
 	}
 
 	void InitializePlayer()
 	{
-		player = Instantiate(PlayerPrefab, SpawnPos, Quaternion.identity);
+		//player = Instantiate(PlayerPrefab, SpawnPos, Quaternion.identity);
 	}
 }

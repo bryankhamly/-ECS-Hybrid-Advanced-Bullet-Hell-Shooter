@@ -8,6 +8,18 @@ public class EnemyBehavior : MonoBehaviour
 	public bool loop;
 	public EnemyPhase[] phases;
 
+	private float deltaTime;
+	private float deltaFrames;
+	[HideInInspector]
+	public float frames;
+
+	private void Update ()
+	{
+		deltaTime = Time.deltaTime;
+		deltaFrames = deltaTime / (1f / Application.targetFrameRate);
+		frames += deltaFrames;
+	}
+
 	IEnumerator ShootPhase (int phaseIndex)
 	{
 		while (started)
