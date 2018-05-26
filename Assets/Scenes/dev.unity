@@ -721,6 +721,12 @@ Prefab:
       propertyPath: bulletsShot.Array.data[58]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
+        type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 114359945828203930, guid: a8f90feaf77180a40bf2a46e8f8112c3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a4cf8d6ab1527f478a1b2397b9318b5, type: 2}
   m_IsPrefabParent: 0
@@ -1924,6 +1930,10 @@ MonoBehaviour:
     objectToSpawn: {fileID: 114440689271101974, guid: c9b5ce31aae2d364ca52538626b87533,
       type: 2}
     amount: 50
+  - objectName: TestNoDmg
+    objectToSpawn: {fileID: 114359945828203930, guid: a8f90feaf77180a40bf2a46e8f8112c3,
+      type: 2}
+    amount: 500
 --- !u!114 &746107352 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114657907666325276, guid: 95423f89f9ef11f44935637ea1ca5a92,

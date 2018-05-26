@@ -8,7 +8,8 @@ public enum BulletOwner
 {
 	Player,
 	Enemy,
-	Drop
+	Drop,
+	NoDamage
 }
 
 public class CustomCollision : MonoBehaviour
@@ -28,6 +29,11 @@ public class CustomCollision : MonoBehaviour
 			foreach (var item in colliders)
 			{
 				var damageInterface = item.GetComponent<IDamageable> ();
+
+				if(bulletOwner == BulletOwner.NoDamage)
+				{
+					return;
+				}
 
 				if (bulletOwner == BulletOwner.Player)
 				{
