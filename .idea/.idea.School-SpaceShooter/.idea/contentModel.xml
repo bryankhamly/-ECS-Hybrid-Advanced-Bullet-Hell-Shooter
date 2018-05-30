@@ -21,6 +21,7 @@
           </e>
           <e p="Components" t="Include">
             <e p="CustomCollision.cs" t="Include" />
+            <e p="DankWeapon.cs" t="Include" />
             <e p="Enemy.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
             <e p="EnemySpawner.cs" t="Include" />
@@ -30,6 +31,7 @@
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerPoints.cs" t="Include" />
             <e p="PlayerWeapons.cs" t="Include" />
+            <e p="PlebEnemy.cs" t="Include" />
             <e p="WaveManager.cs" t="Include" />
             <e p="WaypointManager.cs" t="Include" />
           </e>
@@ -40,6 +42,7 @@
             <e p="Patterns" t="Include">
               <e p="TouhouBirdshotPattern.cs" t="Include" />
               <e p="TouhouCirclePattern.cs" t="Include" />
+              <e p="TouhouCurvePattern.cs" t="Include" />
               <e p="TouhouKaboomer.cs" t="Include" />
               <e p="TouhouMultishotPattern.cs" t="Include" />
               <e p="TouhouNormalPattern.cs" t="Include" />

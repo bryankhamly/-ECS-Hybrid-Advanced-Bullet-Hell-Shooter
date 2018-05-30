@@ -17,6 +17,9 @@ public class PlayerWeapons : MonoBehaviour
 	void Awake ()
 	{
 		weaponList.Add(defaultWeapon);
-		//Add other weapons.
+		foreach (var weapon in otherWeapons)
+		{
+			weaponList.Add(weapon);
+		}
 	}
 }
