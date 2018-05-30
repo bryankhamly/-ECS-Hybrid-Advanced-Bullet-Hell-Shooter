@@ -8,10 +8,15 @@ public class PlayerWeapons : MonoBehaviour
 	public Transform Target;
 
 	public Weapon defaultWeapon;
+
+	[HideInInspector]
 	public List<Weapon> weaponList;
+
+	public List<Weapon> otherWeapons;
 
 	void Awake ()
 	{
 		weaponList.Add(defaultWeapon);
+		//Add other weapons.
 	}
 }

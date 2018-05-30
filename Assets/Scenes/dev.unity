@@ -175,6 +175,44 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 239302169}
   m_Script: {fileID: 11500000, guid: f75828c43e2ee1a41a1f5df563d05278, type: 3}
+--- !u!1 &118739052 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1666805400738892, guid: 8a541418ca7082c428c42eaaac3a2479,
+    type: 2}
+  m_PrefabInternal: {fileID: 616282883}
+--- !u!114 &118739053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118739052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0d3b002e26a8a4f911dd6b83882428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootPoint: {fileID: 333296824}
+  Target: {fileID: 0}
+  defaultWeapon:
+    name: Default
+    active: 1
+    requireInput: 0
+    autoAim: 0
+    shootPoint: {fileID: 0}
+    fireRate: 0.13
+    bulletType: 0
+    bulletsToShoot: 3
+    bulletDamage: 10
+    bulletSpeed: 15
+    angleSpread: 0.2
+    xOffset: 0
+    bulletSpray: 0
+    bullet: {fileID: 114241544814184238, guid: 4e83274e7f14e04429c84bdf76611995, type: 2}
+    muzzleFlash: {fileID: 0}
+    flashOffset: {x: 0, y: 0}
+    shootSfx: {fileID: 0}
+    timer: 0
+  weaponList: []
 --- !u!1 &131136840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1195,11 @@ Transform:
   m_Father: {fileID: 312102242}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &333296824 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4820823008674304, guid: 8a541418ca7082c428c42eaaac3a2479,
+    type: 2}
+  m_PrefabInternal: {fileID: 616282883}
 --- !u!1 &379896162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,7 +1511,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114327410075648696, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8a541418ca7082c428c42eaaac3a2479, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &663792565
