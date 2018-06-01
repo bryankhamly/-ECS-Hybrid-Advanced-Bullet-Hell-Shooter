@@ -270,43 +270,6 @@ MonoBehaviour:
     shootSfx: {fileID: 0}
     timer: 0
   weaponList: []
-  otherWeapons:
-  - name: Weapon1
-    active: 0
-    requireInput: 0
-    autoAim: 0
-    shootPoint: {fileID: 0}
-    fireRate: 0.15
-    bulletType: 0
-    bulletsToShoot: 2
-    bulletDamage: 10
-    bulletSpeed: 15
-    angleSpread: 0.1
-    xOffset: 0
-    bulletSpray: 0
-    bullet: {fileID: 114241544814184238, guid: 4e83274e7f14e04429c84bdf76611995, type: 2}
-    muzzleFlash: {fileID: 0}
-    flashOffset: {x: 0, y: 0}
-    shootSfx: {fileID: 0}
-    timer: 0
-  - name: Weapon2
-    active: 0
-    requireInput: 0
-    autoAim: 0
-    shootPoint: {fileID: 0}
-    fireRate: 0.2
-    bulletType: 0
-    bulletsToShoot: 3
-    bulletDamage: 10
-    bulletSpeed: 15
-    angleSpread: 0.2
-    xOffset: 0
-    bulletSpray: 0
-    bullet: {fileID: 114241544814184238, guid: 4e83274e7f14e04429c84bdf76611995, type: 2}
-    muzzleFlash: {fileID: 0}
-    flashOffset: {x: 0, y: 0}
-    shootSfx: {fileID: 0}
-    timer: 0
 --- !u!114 &114962899905660050
 MonoBehaviour:
   m_ObjectHideFlags: 1

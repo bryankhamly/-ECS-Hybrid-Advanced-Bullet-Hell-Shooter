@@ -39,6 +39,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		health = maxHealth;
 		c255 = sprite.color;
 		c0 = new Color (c255.r, c255.g, c255.b, 0);
+
+		if(invuln)
+			invulnTimer = -9999999f;
 	}
 
 	private void Update ()

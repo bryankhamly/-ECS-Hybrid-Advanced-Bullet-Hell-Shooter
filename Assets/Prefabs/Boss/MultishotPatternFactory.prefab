@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1062184632133180}
+  m_RootGameObject: {fileID: 1043943123457560}
   m_IsPrefabParent: 1
---- !u!1 &1062184632133180
+--- !u!1 &1043943123457560
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4497230953757138}
-  - component: {fileID: 114046765575474524}
+  - component: {fileID: 4334489210712542}
+  - component: {fileID: 114605143631156642}
   m_Layer: 0
-  m_Name: CurvePatternFactory
+  m_Name: MultishotPatternFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4497230953757138
+--- !u!4 &4334489210712542
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062184632133180}
+  m_GameObject: {fileID: 1043943123457560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,32 +40,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114046765575474524
+--- !u!114 &114605143631156642
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062184632133180}
+  m_GameObject: {fileID: 1043943123457560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed4f3064c66b1c4ca24322d7b34fa84, type: 3}
+  m_Script: {fileID: 11500000, guid: 34ccdb2f92d746f4c922c1d86c93ddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   available: 1
-  bulletPrefab: {fileID: 114359945828203930, guid: f2d1ac73d6dc73b4ca3943fd767bf758,
+  bulletPrefab: {fileID: 114169655702386892, guid: 7c1fc540e6207f84ca6d007169c56f4f,
     type: 2}
   bulletSpeed: 5
   bulletAccel: 0
-  bulletsToShoot: 100
+  bulletsToShoot: 2000
   bulletDamage: 1
   bulletStrafe: 0
   destroyOnDone: 0
   bulletsShot: []
-  directionCount: 3
-  aimAngle: 180
-  curveSize: 40
-  curveSpeed: 5
-  angleOffset: 20
-  fireRate: 0.075
+  directionCount: 60
+  aimAngle: 114
+  angleOffset: 2
+  fireRate: 0.1
   autoAim: 0
   target: {fileID: 0}
+  spin: 0
+  spinAngle: 10

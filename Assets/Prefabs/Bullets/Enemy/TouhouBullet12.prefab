@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114454280986357740}
   - component: {fileID: 114349644315765774}
   m_Layer: 0
-  m_Name: TouhouBullet3
+  m_Name: TouhouBullet12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   angle: 0
   speed: 0
   acceleration: 0
-  damage: 1
+  damage: 0
   strafe: 0
   explode: 0
   explodeTime: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  colliderColor: {r: 1, g: 0, b: 0, a: 0.98039216}
+  colliderColor: {r: 1, g: 0, b: 0, a: 0.53333336}
   radius: 0.15
   offset: {x: 0, y: 0}
 --- !u!114 &114454280986357740
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300564, guid: e64bf7f6b2c086b448a20969b0cd038d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -9,17 +9,10 @@ public class PlayerWeapons : MonoBehaviour
 
 	public Weapon defaultWeapon;
 
-	[HideInInspector]
 	public List<Weapon> weaponList;
-
-	public List<Weapon> otherWeapons;
 
 	void Awake ()
 	{
 		weaponList.Add(defaultWeapon);
-		foreach (var weapon in otherWeapons)
-		{
-			weaponList.Add(weapon);
-		}
 	}
 }

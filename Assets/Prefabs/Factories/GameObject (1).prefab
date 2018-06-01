@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1611684724484990}
+  m_RootGameObject: {fileID: 1244326824376004}
   m_IsPrefabParent: 1
---- !u!1 &1611684724484990
+--- !u!1 &1244326824376004
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4126010028097812}
-  - component: {fileID: 114403520072360640}
+  - component: {fileID: 4505721828362136}
+  - component: {fileID: 114812482137397366}
   m_Layer: 0
-  m_Name: KaboomerFactory
+  m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4126010028097812
+--- !u!4 &4505721828362136
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1611684724484990}
+  m_GameObject: {fileID: 1244326824376004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,30 +40,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114403520072360640
+--- !u!114 &114812482137397366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1611684724484990}
+  m_GameObject: {fileID: 1244326824376004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f09920f7b9fd604a9201785312fccfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ed4f3064c66b1c4ca24322d7b34fa84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   available: 1
-  bulletPrefab: {fileID: 114392900137163410, guid: 6483a5dd5dcdc5d4e9c6fbdd75a6e143,
-    type: 2}
-  bulletSpeed: 5
+  bulletPrefab: {fileID: 0}
+  bulletSpeed: 0
   bulletAccel: 0
-  bulletsToShoot: 1
-  bulletDamage: 1
+  bulletsToShoot: 0
+  bulletDamage: 0
   bulletStrafe: 0
+  destroyOnDone: 0
   bulletsShot: []
-  angle: 180
-  patternToExplode: {fileID: 114518510256623490, guid: 7a4cf8d6ab1527f478a1b2397b9318b5,
-    type: 2}
-  explosionDelay: 1
+  directionCount: 3
+  aimAngle: 180
+  curveSize: 45
+  curveSpeed: 5
+  angleOffset: 20
+  fireRate: 0.075
   autoAim: 0
   target: {fileID: 0}
-  explosionPrefab: {fileID: 0}
