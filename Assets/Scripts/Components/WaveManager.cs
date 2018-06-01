@@ -6,6 +6,7 @@ using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
+	public GameManager gameManager;
 	public TextMeshProUGUI waveText;
 	public WaypointManager waypoints;
 	public List<Wave> waves;
@@ -14,6 +15,11 @@ public class WaveManager : MonoBehaviour
 	public List<Enemy> enemyList;
 	private bool running;
 	private bool spawning;
+
+	public EnemyBehavior boss;
+	bool done;
+
+	public GameObject startButton;
 	
 	void Start ()
 	{
@@ -29,9 +35,11 @@ public class WaveManager : MonoBehaviour
 				Debug.Log("Wave Finished " + waveIndex);
 				running = false;
 
-				if (WasLastWave())
+				if (WasLastWave() && !done)
 				{
+					done = true;
 					Debug.Log("All Waves Finished");
+					boss.gameObject.GetComponent<BossHealth>().StartBoss();
 				}
 				else
 				{
@@ -43,6 +51,13 @@ public class WaveManager : MonoBehaviour
 			}
 		}
 	
+	}
+
+	public void StartButton()
+	{
+		StartWave(0);
+		startButton.SetActive(false);
+		gameManager.InitializePlayer();
 	}
 
 	public void StartWave(int index)

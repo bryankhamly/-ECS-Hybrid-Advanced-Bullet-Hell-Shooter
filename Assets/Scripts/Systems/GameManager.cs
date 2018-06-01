@@ -1,22 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 	public GameObject PlayerPrefab;
 	public Vector3 SpawnPos;
 
-	private GameObject player;
+	public GameObject player;
+
+	public TextMeshProUGUI pointsUI;
+	public Transform lifeIcons;
+	public GameObject loseXD;
+	public Image status;
 	
 	void Start () 
 	{
-		InitializePlayer();
+		//InitializePlayer();
 		Application.targetFrameRate = 60;
 	}
 
-	void InitializePlayer()
+	public void InitializePlayer()
 	{
-		//player = Instantiate(PlayerPrefab, SpawnPos, Quaternion.identity);
+		player = Instantiate(PlayerPrefab, SpawnPos, Quaternion.identity);
+		player.GetComponent<PlayerPoints>().pointsText = pointsUI;
+		player.GetComponent<PlayerHealth>().lifeIcon = lifeIcons;
+		player.GetComponent<PlayerHealth>().loseScreen = loseXD;
+		player.GetComponent<Special>().statusBar = status;
 	}
 }

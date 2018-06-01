@@ -27,6 +27,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	public Transform lifeIcon;
 	public List<Transform> lifeIcons;
 
+	public GameObject loseScreen;
+
 	private void Start ()
 	{
 		foreach (Transform child in lifeIcon)
@@ -74,6 +76,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 			if (health <= 0)
 			{
 				dead = true;
+				loseScreen.SetActive(true);
 				return;
 			}
 

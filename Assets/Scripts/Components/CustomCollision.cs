@@ -9,7 +9,8 @@ public enum BulletOwner
 	Player,
 	Enemy,
 	Drop,
-	NoDamage
+	NoDamage,
+	Upgrade
 }
 
 public class CustomCollision : MonoBehaviour
@@ -30,7 +31,7 @@ public class CustomCollision : MonoBehaviour
 			{
 				var damageInterface = item.GetComponent<IDamageable> ();
 
-				if(bulletOwner == BulletOwner.NoDamage)
+				if (bulletOwner == BulletOwner.NoDamage)
 				{
 					return;
 				}
@@ -55,7 +56,16 @@ public class CustomCollision : MonoBehaviour
 							//Nothing, let it ReturnToPool once its out of the camera.
 						}
 					}
-		
+
+					var touhoubullet = GetComponentInParent<TouhouBullet> ();
+
+					if (touhoubullet)
+					{
+						var bulletDamage = touhoubullet.damage;
+
+						damageInterface.TakeDamage (bulletDamage);
+						touhoubullet.ReturnToPool ();
+					}
 
 				}
 				else if (bulletOwner == BulletOwner.Enemy)
@@ -67,16 +77,22 @@ public class CustomCollision : MonoBehaviour
 					//Do damage to player here
 					if (!playerHealth.invuln)
 					{
-						bullet.PoolCleanup();
+						bullet.PoolCleanup ();
 					}
 					damageInterface.TakeDamage (bulletDamage);
 				}
 				else if (bulletOwner == BulletOwner.Drop)
 				{
 					var obj = GetComponent<PooledObject> ();
-					var points = item.GetComponent<PlayerPoints>();
-					points.AddPoints(100);
-					obj.ReturnToPool();
+					var points = item.GetComponent<PlayerPoints> ();
+					points.AddPoints (100);
+					obj.ReturnToPool ();
+				}
+				else if (bulletOwner == BulletOwner.Upgrade)
+				{
+					var obj = GetComponent<PooledObject> ();
+					//Upgrade here
+					obj.ReturnToPool ();
 				}
 			}
 		}
