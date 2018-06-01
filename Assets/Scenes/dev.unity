@@ -1515,7 +1515,7 @@ MonoBehaviour:
   - objectName: TouhouBullet4
     objectToSpawn: {fileID: 114780748842909798, guid: ad68e173df46c124e9795cbf9d6e04e3,
       type: 2}
-    amount: 500
+    amount: 1000
   - objectName: TouhouBullet5
     objectToSpawn: {fileID: 114522310182925428, guid: ec4232aa6bfa22143841f902b5a484c4,
       type: 2}
