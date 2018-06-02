@@ -2026,6 +2026,22 @@ MonoBehaviour:
     objectToSpawn: {fileID: 114289229326548162, guid: 4d7aa0c7ddb0b6745a364ca3d3d1dd02,
       type: 2}
     amount: 10
+  - objectName: Enemy Circle
+    objectToSpawn: {fileID: 114614170217280194, guid: 2d83ce24beeed334f8709e3216324107,
+      type: 2}
+    amount: 10
+  - objectName: Enemy Multishot
+    objectToSpawn: {fileID: 114798665922620758, guid: 427d665004897ea468b79dbf685f65fe,
+      type: 2}
+    amount: 10
+  - objectName: Enemy Birdshot
+    objectToSpawn: {fileID: 114136173123136720, guid: 713268acf31a659418cd707bf78cac21,
+      type: 2}
+    amount: 10
+  - objectName: Enemy Random
+    objectToSpawn: {fileID: 114881269664339500, guid: 8eae464353302f849af70b67e715c65d,
+      type: 2}
+    amount: 10
 --- !u!1 &752400680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,14 +2839,14 @@ MonoBehaviour:
     spawns:
     - enemyName: Enemy 1
       waypointIndex: 3
-      enemy: {fileID: 114798665922620758, guid: 427d665004897ea468b79dbf685f65fe,
+      enemy: {fileID: 114881269664339500, guid: 8eae464353302f849af70b67e715c65d,
         type: 2}
       enemyCount: 1
       timePerSpawn: 1
       aim: 0
     - enemyName: Enemy 2
       waypointIndex: 1
-      enemy: {fileID: 114798665922620758, guid: 427d665004897ea468b79dbf685f65fe,
+      enemy: {fileID: 114881269664339500, guid: 8eae464353302f849af70b67e715c65d,
         type: 2}
       enemyCount: 1
       timePerSpawn: 2
