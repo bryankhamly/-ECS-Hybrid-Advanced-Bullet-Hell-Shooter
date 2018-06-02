@@ -20,8 +20,14 @@ public class TouhouMultishotPattern : TouhouPattern
 	public bool spin;
 	public float spinAngle;
 
+
 	public override void ShootBullet ()
 	{
+		 if (target == null)
+        {
+            target = FindObjectOfType<PlayerHealth> ().transform;
+        }
+
 		if (autoAim)
 		{
 			LookAtTarget ();

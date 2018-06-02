@@ -17,4 +17,5 @@ public struct SpawnData
     public PooledObject enemy;
     public int enemyCount;
     public float timePerSpawn;
+    public bool aim;
 }

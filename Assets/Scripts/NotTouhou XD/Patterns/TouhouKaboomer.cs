@@ -22,8 +22,14 @@ public class TouhouKaboomer : TouhouPattern
     [Header ("[Follow]")]
     public bool follow;
 
+
     public override void ShootBullet ()
     {
+         if (target == null)
+        {
+            target = FindObjectOfType<PlayerHealth> ().transform;
+        }
+
         if (autoAim)
         {
             LookAtTarget ();

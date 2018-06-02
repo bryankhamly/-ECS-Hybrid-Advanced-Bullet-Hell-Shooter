@@ -15,6 +15,12 @@ public class TouhouNormalPattern : TouhouPattern
 
     public override void ShootBullet ()
     {
+        
+        if (target == null)
+        {
+            target = FindObjectOfType<PlayerHealth> ().transform;
+        }
+
         if (autoAim)
         {
             LookAtTarget ();

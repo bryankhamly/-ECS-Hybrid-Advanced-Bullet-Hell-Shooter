@@ -23,7 +23,7 @@ public abstract class TouhouPattern : MonoBehaviour
 	public bool destroyOnDone;
 
 	[Header ("[Bullet List]")]
-	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track
+	public List<TouhouBullet> bulletsShot; //In Touhou, when unit dies, all its shots turn into stuff. Gunna use this list to keep track - not doing this anymore XDD
 
 	private void Awake ()
 	{

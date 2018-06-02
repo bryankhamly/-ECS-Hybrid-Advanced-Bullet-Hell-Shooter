@@ -16,8 +16,14 @@ public class TouhouBirdshotPattern : TouhouPattern
 	public bool autoAim;
 	public Transform target;
 
+
 	public override void ShootBullet ()
 	{
+		 if (target == null)
+        {
+            target = FindObjectOfType<PlayerHealth> ().transform;
+        }
+		
 		if (autoAim)
 		{
 			LookAtTarget ();

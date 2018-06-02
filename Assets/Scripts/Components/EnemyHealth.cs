@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
+	[Range (0, 100)]
+	public int upgradeChance;
+
 	public int maxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
 	public int health { get { return _health; } set { _health = value; } }
 
@@ -16,7 +19,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
 	public bool dead;
 	public PooledObject explosion;
+
 	public PooledObject drop;
+	public PooledObject upgradeDrop;
 
 	public Animator anim;
 
@@ -39,10 +44,22 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 				var explosionXD = explosion.GetPooledInstance<PooledObject> ();
 				explosionXD.transform.position = transform.position;
 
-				var dropXD = drop.GetPooledInstance<PooledObject> ();
-				dropXD.transform.position = transform.position;
-				Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D> ();
-				dropRb.AddForce (new Vector2 (0, 250));
+				int rand = Random.Range (0, 100);
+
+				if (rand <= upgradeChance)
+				{
+					var dropXD = upgradeDrop.GetPooledInstance<PooledObject> ();
+					dropXD.transform.position = transform.position;
+					Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D> ();
+					dropRb.AddForce (new Vector2 (0, 250));
+				}
+				else
+				{
+					var dropXD = drop.GetPooledInstance<PooledObject> ();
+					dropXD.transform.position = transform.position;
+					Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D> ();
+					dropRb.AddForce (new Vector2 (0, 250));
+				}
 
 				dead = true;
 				GetComponent<Enemy> ().ReturnToPool ();

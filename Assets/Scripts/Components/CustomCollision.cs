@@ -92,6 +92,8 @@ public class CustomCollision : MonoBehaviour
 				{
 					var obj = GetComponent<PooledObject> ();
 					//Upgrade here
+					var upgrades = item.GetComponent<Upgrades>();
+					upgrades.Upgrade();
 					obj.ReturnToPool ();
 				}
 			}

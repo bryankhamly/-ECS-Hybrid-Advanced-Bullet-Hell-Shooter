@@ -13,13 +13,16 @@ public class WaveManager : MonoBehaviour
 	public int waveIndex = -1;
 
 	public List<Enemy> enemyList;
+	public List<Transform> bossList;
 	private bool running;
 	private bool spawning;
 
 	public EnemyBehavior boss;
-	bool done;
+	public bool done;
 
 	public GameObject startButton;
+
+	public Transform player;
 	
 	void Start ()
 	{
@@ -40,6 +43,8 @@ public class WaveManager : MonoBehaviour
 					done = true;
 					Debug.Log("All Waves Finished");
 					boss.gameObject.GetComponent<BossHealth>().StartBoss();
+
+					bossList.Add(boss.transform);
 				}
 				else
 				{
@@ -86,6 +91,11 @@ public class WaveManager : MonoBehaviour
 				enemy.myGroup = enemyList;
 				enemy.myWaypoint = waypoints.wayPoints[waves[index].spawns[i].waypointIndex];
 				enemy.gameObject.transform.position = enemy.myWaypoint.points[0].position;
+
+				if(waves[index].spawns[i].aim)
+				{
+					enemy.gameObject.GetComponent<PlebEnemy>().aim = true;
+				}
 				yield return new WaitForSeconds(waves[index].spawns[i].timePerSpawn);
 			}
 		}

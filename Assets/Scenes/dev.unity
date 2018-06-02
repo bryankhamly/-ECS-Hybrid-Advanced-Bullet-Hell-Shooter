@@ -1926,14 +1926,14 @@ MonoBehaviour:
     objectToSpawn: {fileID: 114668302450149850, guid: 8f571c18238b16548a5919c146756301,
       type: 2}
     amount: 10
-  - objectName: Enemy1
-    objectToSpawn: {fileID: 114850125631168626, guid: 495b66f82378e9c48a50dd956bab63e8,
+  - objectName: Enemy [Single Linear]
+    objectToSpawn: {fileID: 114002997644036298, guid: a5431963c778e89419bbec57f2cf3b09,
       type: 2}
     amount: 100
   - objectName: TouhouBullet1
     objectToSpawn: {fileID: 114359945828203930, guid: f2d1ac73d6dc73b4ca3943fd767bf758,
       type: 2}
-    amount: 500
+    amount: 1000
   - objectName: TouhouBullet2
     objectToSpawn: {fileID: 114102953237380322, guid: 1b918b834a5b318409e74347d260896a,
       type: 2}
@@ -2016,6 +2016,14 @@ MonoBehaviour:
     amount: 600
   - objectName: Upgrade
     objectToSpawn: {fileID: 114689344284725578, guid: 7ef6ec0524f7f574bb7566564bc9ae4c,
+      type: 2}
+    amount: 10
+  - objectName: Enemy 3 Shot Linear
+    objectToSpawn: {fileID: 114257296915035572, guid: c1ceb012ccbb9fe4d93f9fe7b49df83a,
+      type: 2}
+    amount: 10
+  - objectName: Enemy 5 Shot Linear
+    objectToSpawn: {fileID: 114289229326548162, guid: 4d7aa0c7ddb0b6745a364ca3d3d1dd02,
       type: 2}
     amount: 10
 --- !u!1 &752400680
@@ -2458,6 +2466,7 @@ MonoBehaviour:
   lifeIcons: {fileID: 1814514785}
   loseXD: {fileID: 389727269}
   status: {fileID: 548447739}
+  waveManager: {fileID: 1078763053}
 --- !u!1 &960220237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,34 +2823,41 @@ MonoBehaviour:
     spawns:
     - enemyName: Enemy 1
       waypointIndex: 3
-      enemy: {fileID: 114850125631168626, guid: 495b66f82378e9c48a50dd956bab63e8,
+      enemy: {fileID: 114798665922620758, guid: 427d665004897ea468b79dbf685f65fe,
         type: 2}
-      enemyCount: 5
+      enemyCount: 1
       timePerSpawn: 1
+      aim: 0
     - enemyName: Enemy 2
       waypointIndex: 1
-      enemy: {fileID: 114850125631168626, guid: 495b66f82378e9c48a50dd956bab63e8,
+      enemy: {fileID: 114798665922620758, guid: 427d665004897ea468b79dbf685f65fe,
         type: 2}
-      enemyCount: 5
+      enemyCount: 1
       timePerSpawn: 2
+      aim: 1
     - enemyName: Enemy 3
       waypointIndex: 2
-      enemy: {fileID: 114850125631168626, guid: 495b66f82378e9c48a50dd956bab63e8,
+      enemy: {fileID: 114002997644036298, guid: a5431963c778e89419bbec57f2cf3b09,
         type: 2}
-      enemyCount: 5
+      enemyCount: 1
       timePerSpawn: 2
+      aim: 0
   - waveName: Wave 2
     spawns:
     - enemyName: Enemy 1
       waypointIndex: 3
-      enemy: {fileID: 114850125631168626, guid: 495b66f82378e9c48a50dd956bab63e8,
+      enemy: {fileID: 114002997644036298, guid: a5431963c778e89419bbec57f2cf3b09,
         type: 2}
-      enemyCount: 5
+      enemyCount: 3
       timePerSpawn: 1
+      aim: 0
   waveIndex: -1
   enemyList: []
+  bossList: []
   boss: {fileID: 73366163}
+  done: 0
   startButton: {fileID: 1527343899}
+  player: {fileID: 0}
 --- !u!1 &1098501804
 GameObject:
   m_ObjectHideFlags: 0

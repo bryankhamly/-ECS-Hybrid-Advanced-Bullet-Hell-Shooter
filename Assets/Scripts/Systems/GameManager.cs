@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 	public Transform lifeIcons;
 	public GameObject loseXD;
 	public Image status;
+
+	public WaveManager waveManager; //enemies from list on wavemanager
 	
 	void Start () 
 	{
@@ -30,5 +32,7 @@ public class GameManager : MonoBehaviour
 		player.GetComponent<PlayerHealth>().lifeIcon = lifeIcons;
 		player.GetComponent<PlayerHealth>().loseScreen = loseXD;
 		player.GetComponent<Special>().statusBar = status;
+		player.GetComponent<PlayerWeapons>().waveManager = waveManager;
+		waveManager.player = player.transform;
 	}
 }
