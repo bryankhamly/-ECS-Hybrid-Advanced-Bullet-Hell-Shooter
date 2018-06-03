@@ -13,14 +13,23 @@ public class TouhouNormalPattern : TouhouPattern
     public bool autoAim;
     public Transform target;
 
-	private void Start ()
-	{
-		target = transform.root.GetComponent<BossHealth> ().target;
-	}
-    
+    private void Start ()
+    {
+        StartCoroutine(GetMeTarget());
+    }
+
+    IEnumerator GetMeTarget ()
+    {
+        yield return new WaitForSeconds (1);
+        if (autoAim)
+        {
+            target = transform.root.GetComponent<BossHealth> ().target;
+        }
+    }
+
     public override void ShootBullet ()
     {
-        
+
         if (target == null)
         {
             //target = transform.root.GetComponent<BossHealth>().target;

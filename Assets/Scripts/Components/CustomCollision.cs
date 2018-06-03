@@ -10,7 +10,7 @@ public enum BulletOwner
 	Enemy,
 	Drop,
 	NoDamage,
-	Upgrade
+	Upgrade,
 }
 
 public class CustomCollision : MonoBehaviour
