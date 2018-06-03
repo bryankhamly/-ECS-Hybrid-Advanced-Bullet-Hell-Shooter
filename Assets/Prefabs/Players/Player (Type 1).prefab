@@ -599,7 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 30
   _health: 0
-  invuln: 1
+  invuln: 0
   dead: 0
   lifeIcon: {fileID: 0}
   lifeIcons: []
