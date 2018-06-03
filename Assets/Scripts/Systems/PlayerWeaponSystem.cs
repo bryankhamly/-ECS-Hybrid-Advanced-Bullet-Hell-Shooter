@@ -33,6 +33,11 @@ public class PlayerWeaponSystem : ComponentSystem
                     if (weapon.timer >= weapon.fireRate)
                     {
                         Shoot (i, j);
+
+                        if(weapon.shootSfx)
+                        {
+                            data.GameObject[i].GetComponent<AudioSource>().PlayOneShot(weapon.shootSfx);
+                        }
                     }
                 }
             }

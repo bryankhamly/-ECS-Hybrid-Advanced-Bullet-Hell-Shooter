@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c33285becfd63c43b9870c29c282c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeChance: 20
-  _maxHealth: 30
+  upgradeChance: 40
+  _maxHealth: 100
   _health: 0
   dead: 0
   explosion: {fileID: 114905313836134918, guid: cbbf28867ca804b4bb9eed00aa425ffe,

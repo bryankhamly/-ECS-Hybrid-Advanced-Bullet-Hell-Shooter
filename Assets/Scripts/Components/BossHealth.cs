@@ -29,11 +29,36 @@ public class BossHealth : MonoBehaviour, IDamageable
 	public GameObject victoryScreen;
 	public TMPro.TextMeshProUGUI winScore;
 	public TMPro.TextMeshProUGUI score;
+	public TMPro.TextMeshProUGUI diffText;
 
 	public GameObject bossHealthUI;
 	public Transform bossHealthbar;
 
 	public GameManager gameManager;
+	int health1;
+	int health2;
+	int health3;
+
+	void InitializeBossHealth ()
+	{
+		WaveManager wave = gameManager.waveManager;
+
+		if (wave.difficulty == Difficulty.Normal)
+		{
+			health1 = wave.easyHealth1;
+			health2 = wave.easyHealth2;
+			health3 = wave.easyHealth3;
+		}
+		else
+		{
+			health1 = wave.hardHealth1;
+			health2 = wave.hardHealth2;
+			health3 = wave.hardHealth3;
+		}
+
+		maxHealth = health1;
+		health = maxHealth;
+	}
 
 	void Start ()
 	{
@@ -57,6 +82,9 @@ public class BossHealth : MonoBehaviour, IDamageable
 		bossHealthUI.SetActive (true);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		behavior.StartPhase (0);
+		InitializeBossHealth ();
+		gameManager.audioSource.clip = gameManager.phase1;
+		gameManager.audioSource.Play ();
 	}
 
 	public void TakeDamage (int value)
@@ -73,8 +101,10 @@ public class BossHealth : MonoBehaviour, IDamageable
 			bossHealthbar.localScale = new Vector3 (healthPercent, 1, 1);
 
 			//eww hardcoded
-			if (health <= 6000 && phase1)
+			if (health <= health2 && phase1)
 			{
+				gameManager.audioSource.clip = gameManager.phase2;
+				gameManager.audioSource.Play ();
 				phase1 = false;
 				phase2 = true;
 				phase3 = false;
@@ -82,8 +112,10 @@ public class BossHealth : MonoBehaviour, IDamageable
 				behavior.StartPhase (1);
 			}
 
-			if (health <= 3000 && phase2)
+			if (health <= health3 && phase2)
 			{
+				gameManager.audioSource.clip = gameManager.phase3;
+				gameManager.audioSource.Play ();
 				phase1 = false;
 				phase2 = false;
 				phase3 = true;
@@ -105,6 +137,15 @@ public class BossHealth : MonoBehaviour, IDamageable
 				behavior.StopPhase ();
 				victoryScreen.SetActive (true);
 				winScore.text = "Score: " + score.text;
+				if (gameManager.waveManager.difficulty == Difficulty.Normal)
+				{
+					diffText.text = "Difficulty: " + "Normal";
+				}
+				else
+				{
+					diffText.text = "Difficulty: " + "Hard";
+				}
+
 				bossHealthUI.SetActive (false);
 				gameManager.player.GetComponent<PlayerHealth> ().invuln = true;
 				Destroy (gameObject);

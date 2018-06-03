@@ -18,9 +18,16 @@ public class GameManager : MonoBehaviour
 	public Image status;
 
 	public WaveManager waveManager; //enemies from list on wavemanager
+
+	[Header("Music")]
+	public AudioSource audioSource;
+	public AudioClip phase1;
+	public AudioClip phase2;
+	public AudioClip phase3;
 	
 	void Start () 
 	{
+		audioSource = GetComponent<AudioSource>();
 		//InitializePlayer();
 		Application.targetFrameRate = 60;
 	}

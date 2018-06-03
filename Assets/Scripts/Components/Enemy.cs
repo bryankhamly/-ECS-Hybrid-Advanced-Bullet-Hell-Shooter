@@ -11,6 +11,8 @@ public class Enemy : PooledObject
 
 	public List<Enemy> myGroup;
 
+	public bool childSprite;
+
 	void Start ()
 	{
 		currentIndex = 1;
@@ -23,7 +25,7 @@ public class Enemy : PooledObject
 
 	void OnDisable ()
 	{
-		myGroup.Remove(this);
+		myGroup.Remove (this);
 		var enemyHealth = GetComponent<EnemyHealth> ();
 		ResetHurt ();
 		enemyHealth.health = enemyHealth.maxHealth;
@@ -33,7 +35,18 @@ public class Enemy : PooledObject
 
 	void ResetHurt ()
 	{
-		var sprite = GetComponent<SpriteRenderer> ();
+
+		SpriteRenderer sprite;
+
+		if (childSprite)
+		{
+			sprite = GetComponentInChildren<SpriteRenderer>();
+		}
+		else
+		{
+			sprite = GetComponent<SpriteRenderer> ();
+		}
+
 		sprite.color = Color.white;
 		sprite.material.color = Color.white;
 	}

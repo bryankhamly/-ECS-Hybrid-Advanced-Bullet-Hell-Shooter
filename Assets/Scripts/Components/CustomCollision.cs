@@ -94,6 +94,8 @@ public class CustomCollision : MonoBehaviour
 					//Upgrade here
 					var upgrades = item.GetComponent<Upgrades>();
 					upgrades.Upgrade();
+					var points = item.GetComponent<PlayerPoints> ();
+					points.AddPoints (50);
 					obj.ReturnToPool ();
 				}
 			}

@@ -13,16 +13,13 @@ public class TouhouCirclePattern : TouhouPattern
     public bool autoAim;
     public Transform target;
 
-	private void Start ()
-	{
-		if(autoAim)
-		{
-			target = FindObjectOfType<PlayerHealth>().transform;
-		}
-	}
-    
     public override void ShootBullet ()
     {
+        if (target == null)
+        {
+            target = FindObjectOfType<PlayerHealth> ().transform;
+        }
+
         if (autoAim)
         {
             LookAtTarget ();

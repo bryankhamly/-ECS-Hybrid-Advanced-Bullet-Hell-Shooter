@@ -42,7 +42,6 @@ public class Special : MonoBehaviour
 		float increment = 0.02f / cooldown;
 		while (progress < 1)
 		{
-			Debug.Log(progress);
 			statusBar.color = Color.Lerp (cdColor, readyColor, progress);
 			progress += increment;
 			yield return new WaitForSeconds (increment);

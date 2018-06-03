@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 	{
 		health = maxHealth;
 		if (anim == null)
-			anim = GetComponent<Animator> ();
+			anim = GetComponentInChildren<Animator> ();
 	}
 
 	public void TakeDamage (int value)
@@ -43,6 +43,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 			{
 				var explosionXD = explosion.GetPooledInstance<PooledObject> ();
 				explosionXD.transform.position = transform.position;
+
+				explosionXD.GetComponent<AudioSource>().Play();
 
 				int rand = Random.Range (0, 100);
 

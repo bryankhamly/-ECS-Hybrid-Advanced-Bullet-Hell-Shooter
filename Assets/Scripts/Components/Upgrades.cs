@@ -27,17 +27,17 @@ public class Upgrades : MonoBehaviour
 				weapon.weaponList[0].angleSpread = 0.1f;
 				break;
 			case 2:
-				weapon.weaponList[0].fireRate = 0.12f;
+				weapon.weaponList[0].fireRate = 0.10f;
 				weapon.weaponList[0].bulletsToShoot = 3;
 				weapon.weaponList[0].angleSpread = 0.2f;
 				break;
 			case 3:
-				weapon.weaponList[0].fireRate = 0.11f;
+				weapon.weaponList[0].fireRate = 0.09f;
 				weapon.weaponList[0].bulletsToShoot = 4;
 				weapon.weaponList[0].angleSpread = 0.25f;
 				break;
 			case 4:
-				weapon.weaponList[0].fireRate = 0.1f;
+				weapon.weaponList[0].fireRate = 0.08f;
 				weapon.weaponList[0].bulletsToShoot = 5;
 				weapon.weaponList[0].angleSpread = 0.3f;
 				break;
@@ -62,6 +62,19 @@ public class Upgrades : MonoBehaviour
 			case 10:
 				weapon.weaponList[2].bulletsToShoot = 12;
 				weapon.weaponList[2].fireRate = 0.65f;
+				break;
+			case 11:
+				weapon.weaponList[2].bulletsToShoot = 16;
+				weapon.weaponList[2].fireRate = 0.62f;
+				break;
+			case 12:
+				weapon.weaponList[0].bulletsToShoot = 6;
+				weapon.weaponList[0].fireRate = 0.075f;
+				weapon.weaponList[0].angleSpread = 0.6f;
+				break;
+			case 13:
+				weapon.weaponList[1].fireRate = 0.62f;
+				weapon.weaponList[1].bulletsToShoot = 8;
 				break;
 			default:
 				break;
