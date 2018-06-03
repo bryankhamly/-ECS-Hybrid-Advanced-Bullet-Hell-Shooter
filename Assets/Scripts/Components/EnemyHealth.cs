@@ -61,6 +61,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 					dropXD.transform.position = transform.position;
 					Rigidbody2D dropRb = dropXD.GetComponent<Rigidbody2D> ();
 					dropRb.AddForce (new Vector2 (0, 250));
+					dropXD.GetComponent<Vac>().ready = true;
 				}
 
 				dead = true;

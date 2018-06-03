@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f5216e95b0d6049a45a70699ea5026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 20
+  _maxHealth: 30
   _health: 0
   invuln: 0
   dead: 0
@@ -731,7 +731,7 @@ MonoBehaviour:
   bulletSpeed: 4
   bulletAccel: 1
   bulletsToShoot: 250
-  bulletDamage: 5
+  bulletDamage: 20
   bulletStrafe: 45
   destroyOnDone: 0
   bulletsShot:

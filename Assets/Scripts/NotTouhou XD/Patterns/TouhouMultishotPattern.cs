@@ -20,12 +20,16 @@ public class TouhouMultishotPattern : TouhouPattern
 	public bool spin;
 	public float spinAngle;
 
-
+	private void Start ()
+	{
+		target = transform.root.GetComponent<BossHealth> ().target;
+	}
+	
 	public override void ShootBullet ()
 	{
 		 if (target == null)
         {
-            target = FindObjectOfType<PlayerHealth> ().transform;
+            //target = transform.root.GetComponent<BossHealth>().target;
         }
 
 		if (autoAim)

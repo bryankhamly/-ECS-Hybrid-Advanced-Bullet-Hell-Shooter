@@ -86,6 +86,7 @@ public class CustomCollision : MonoBehaviour
 					var obj = GetComponent<PooledObject> ();
 					var points = item.GetComponent<PlayerPoints> ();
 					points.AddPoints (100);
+					obj.GetComponent<Vac>().ready = false;
 					obj.ReturnToPool ();
 				}
 				else if (bulletOwner == BulletOwner.Upgrade)

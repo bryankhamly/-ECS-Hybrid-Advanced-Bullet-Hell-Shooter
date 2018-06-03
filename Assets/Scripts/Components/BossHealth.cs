@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
+	public Transform target;
 	public int maxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
 	public int health { get { return _health; } set { _health = value; } }
 

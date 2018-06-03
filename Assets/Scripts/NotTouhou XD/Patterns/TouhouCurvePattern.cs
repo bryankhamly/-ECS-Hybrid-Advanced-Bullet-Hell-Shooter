@@ -19,14 +19,16 @@ public class TouhouCurvePattern : TouhouPattern
 
 	private void Start ()
 	{
-		if(autoAim)
-		{
-			target = FindObjectOfType<PlayerHealth>().transform;
-		}
+		target = transform.root.GetComponent<BossHealth> ().target;
 	}
 	
 	public override void ShootBullet ()
 	{
+		 if (target == null)
+        {
+            //target = transform.root.GetComponent<BossHealth>().target;
+        }
+
 		if (autoAim)
 		{
 			LookAtTarget ();
