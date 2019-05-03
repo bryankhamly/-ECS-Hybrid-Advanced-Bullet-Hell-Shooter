@@ -1,3 +1,5 @@
+GAM-50 Final for James Finley
+
 Suppose to make a Space Shooter for class.
 Went try hard, but at least I can make a template for future uses.
 
